@@ -35,9 +35,9 @@ function Hero() {
             <MainIntro />
           </div>
           <p className="text-gray-500 text-sm md:text-lg py-5 text-justify md:text-left">
-            I`&apos;`m a developer 📱, digital creator 📷, & curious optimist
-            🦦. Right now, I`&apos;`m probably exploring new hobbies,
-            activities, and general knowledge; but I`&apos;`m always ready to
+            I&apos;m a developer 📱, digital creator 📷, & curious optimist
+            🦦. Right now, I&apos;m probably exploring new hobbies,
+            activities, and general knowledge; but I&apos;m always ready to
             collaborate with creatives and businesses.
           </p>
           {/* <p className="text-gray-500 text-sm md:text-lg leading-10 md:leading-normal">
