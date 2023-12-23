@@ -47,8 +47,8 @@ export default defineType({
       title: "Github",
       type: "object",
       fields: [
-        {name: 'githubClient', type: 'url', title: 'Github Client'},
-        {name: 'githubServer', type: 'url', title: 'Github Server'},
+        { name: "githubClient", type: "url", title: "Github Client" },
+        { name: "githubServer", type: "url", title: "Github Server" },
       ],
     },
     {
@@ -67,10 +67,33 @@ export default defineType({
       title: "Created at",
       type: "datetime",
     }),
-    defineField({
+    // defineField({
+    //   name: "body",
+    //   title: "Body",
+    //   type: "blockContent",
+    // }),
+    ({
       name: "body",
       title: "Body",
-      type: "blockContent",
+      type: "array",
+      of: [
+        {
+          type: "block",
+        },
+        {
+          type: "image",
+          fields: [
+            {
+              name: "caption",
+              type: "string",
+              title: "Caption",
+              options: { isHighlighted: true },
+            },
+            // Include other fields if needed, like alt text
+          ],
+        },
+        // You can include other types as well, such as video or custom components
+      ],
     }),
   ],
 
