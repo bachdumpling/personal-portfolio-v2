@@ -64,7 +64,7 @@ const ProjectPage = () => {
             </p>
             <div className="flex justify-start items-center space-x-4 overflow-x-auto overflow-y-hidden scrollbar-hide">
               {project.technology.map((tech) => {
-                return <TechnologyModal tech={tech} />;
+                return <TechnologyModal tech={tech} key={Math.random()} />;
               })}
             </div>
           </div>

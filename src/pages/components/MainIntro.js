@@ -56,7 +56,7 @@ function MainIntro() {
         <TextTransition inline={true} springConfig={presets.slow}>
           {greetings[index % greetings.length]}
         </TextTransition>
-        <div>, I'm Bach!</div>
+        <div>, I`&apos;`m Bach!</div>
       </div>
     </div>
   );

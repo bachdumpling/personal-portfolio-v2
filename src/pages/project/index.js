@@ -1,12 +1,11 @@
 import { AnimatePresence, motion as m } from "framer-motion";
 import React, { useState } from "react";
 import ProjectCard from "../components/ProjectCard";
-import Technology, { TechnologyModal } from "../components/Technology";
+import { TechnologyModal } from "../components/Technology";
 import { ArrowLeftCircleIcon } from "@heroicons/react/24/outline";
 import { GlobeAltIcon } from "@heroicons/react/24/solid";
 import GitHub from "../components/icons/github.svg";
 import Image from "next/image";
-import ProjectDetail from "../components/ProjectDetail";
 import { useRouter } from "next/router";
 
 import { client } from "../../../lib/sanity.client";
@@ -39,6 +38,7 @@ function Project({ setOneProjectDetail, oneProjectDetail, projects }) {
             setOneProject(project);
             setOpenProject(!openProject);
           }}
+          key={project._id}
         >
           <ProjectCard
             project={project}
@@ -142,7 +142,7 @@ function Project({ setOneProjectDetail, oneProjectDetail, projects }) {
                       </p>
                       <div className="flex justify-start items-center space-x-4 overflow-x-auto overflow-y-hidden scrollbar-hide">
                         {oneProject.technology.map((tech) => {
-                          return <TechnologyModal tech={tech} />;
+                          return <TechnologyModal tech={tech} key={Math.random()}/>;
                         })}
                       </div>
                     </div>

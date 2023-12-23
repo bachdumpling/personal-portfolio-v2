@@ -6,17 +6,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Layout from "./components/Layout";
 
-// export async function getStaticProps() {
-//   const posts = await client.fetch(`*[_type == "post"]`);
-//   return {
-//     props: {
-//       posts,
-//     },
-//   };
-// }
-
-export default function Home({ posts }) {
-  // console.log("posts: ", posts);
+export default function Home({ }) {
 
   return (
     <>

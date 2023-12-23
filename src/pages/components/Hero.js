@@ -35,10 +35,10 @@ function Hero() {
             <MainIntro />
           </div>
           <p className="text-gray-500 text-sm md:text-lg py-5 text-justify md:text-left">
-            I'm a developer 📱, digital creator 📷, & curious optimist 🦦. Right
-            now, I'm probably exploring new hobbies, activities, and general
-            knowledge; but I'm always ready to collaborate with creatives and
-            businesses.
+            I`&apos;`m a developer 📱, digital creator 📷, & curious optimist
+            🦦. Right now, I`&apos;`m probably exploring new hobbies,
+            activities, and general knowledge; but I`&apos;`m always ready to
+            collaborate with creatives and businesses.
           </p>
           {/* <p className="text-gray-500 text-sm md:text-lg leading-10 md:leading-normal">
             View my
@@ -58,14 +58,14 @@ function Hero() {
         </div>
 
         {/* <Link href="/about"> */}
-          <div className="pt-5 md:pt-10 flex space-x-3 cursor-pointer">
-            <p className="text-gray-500 text-md hover:underline">
-              See more about me
-            </p>
-            <div className="rotate-90 ">
-              <ArrowUpIcon className="w-5 rotate-90 animate-bounce" />
-            </div>
+        <div className="pt-5 md:pt-10 flex space-x-3 cursor-pointer">
+          <p className="text-gray-500 text-md hover:underline">
+            See more about me
+          </p>
+          <div className="rotate-90 ">
+            <ArrowUpIcon className="w-5 rotate-90 animate-bounce" />
           </div>
+        </div>
         {/* </Link> */}
       </div>
     </m.div>
