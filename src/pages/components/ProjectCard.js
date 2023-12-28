@@ -8,13 +8,16 @@ function ProjectCard({ project }) {
     <div className="col-span-1 row-span-1 flex cursor-pointer shadow-md rounded-lg h-full w-full">
       <div className="relative overflow-hidden bg-no-repeat bg-cover w-full h-full">
         {project?.mainImage && (
-          <Image
-            width={200}
-            height={200}
-            className="w-full h-full rounded-lg"
-            src={urlFor(project.mainImage).url()}
-            alt={project.name || "Project Image"}
-          />
+          <div className="flex justify-center items-center w-full md:h-64 h-64 sm:h-[450px]">
+            <div className="relative w-full shadow-lg h-full">
+              <Image
+                fill={true}
+                className="w-full h-full rounded-lg object-cover"
+                src={urlFor(project.mainImage).url()}
+                alt={project.name || "Project Image"}
+              />
+            </div>
+          </div>
         )}
         <div className="absolute flex flex-col top-0 right-0 bottom-0 left-0 justify-center items-center w-full h-full hover:opacity-100 opacity-0 z-50 transition duration-300 ease-in-out text-sm md:text-lg text-white bg-black bg-opacity-70 space-y-2 rounded-lg">
           {/* <div className=""> */}

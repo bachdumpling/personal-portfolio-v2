@@ -87,7 +87,7 @@ function Project({ setOneProjectDetail, oneProjectDetail, projects }) {
                   className="absolute w-full h-full md:max-w-xl bg-[#FBFCF8] shadow-xl inset-y-0 right-0"
                 >
                   {/* Modal content */}
-                  <div className="py-6 px-6 relative h-full w-full">
+                  <div className="py-6 px-6 pb-20 relative h-full w-full overflow-y-auto">
                     <div
                       onClick={() => {
                         setOpenProject(false);
@@ -97,7 +97,7 @@ function Project({ setOneProjectDetail, oneProjectDetail, projects }) {
                       <ArrowLeftCircleIcon className="w-7 h-7" />
                     </div>
                     <div>
-                      <p className="pt-5 text-lg md:text-xl font-bold">
+                      <p className="pt-5 text-xl md:text-3xl font-bold">
                         {oneProject.title}
                       </p>
                     </div>
@@ -113,6 +113,7 @@ function Project({ setOneProjectDetail, oneProjectDetail, projects }) {
                         height={500}
                         className="bg-cover"
                         src={urlFor(projects[0].mainImage).url()}
+                        alt={projects[0].name || "Project Image"}
                       />
                     </div>
 
@@ -121,18 +122,18 @@ function Project({ setOneProjectDetail, oneProjectDetail, projects }) {
                         <p className="text-md md:text-lg font-semibold">
                           About
                         </p>
-                        <button
-                          onClick={() => {
-                            setOneProjectDetail(oneProject);
-                            router.push(`/project/${oneProject.id}`);
-                          }}
-                          className="text-sm text-gray-500"
-                        >
-                          See more ...
-                        </button>
                       </div>
                       <p className="text-black text-justify text-xs md:text-sm">
-                        {oneProject.longDescription}
+                        {/* {oneProject.longDescription} */}
+                        {oneProject?.longDescription
+                          .split("\n")
+                          .map((line, index) => (
+                            // <p key={index}>{line}</p>
+                            <span key={index}>
+                              {line}
+                              <br />
+                            </span>
+                          ))}
                       </p>
                     </div>
 
@@ -142,7 +143,9 @@ function Project({ setOneProjectDetail, oneProjectDetail, projects }) {
                       </p>
                       <div className="flex justify-start items-center space-x-4 overflow-x-auto overflow-y-hidden scrollbar-hide">
                         {oneProject.technology.map((tech) => {
-                          return <TechnologyModal tech={tech} key={Math.random()}/>;
+                          return (
+                            <TechnologyModal tech={tech} key={Math.random()} />
+                          );
                         })}
                       </div>
                     </div>
@@ -152,17 +155,33 @@ function Project({ setOneProjectDetail, oneProjectDetail, projects }) {
                         <a href="https://github.com/bachdumpling">
                           <GlobeAltIcon className="w-5 h-5" name="My github" />
                         </a>
-                        <p className="">Website</p>
+                        <p className="">Links</p>
                       </div>
-                      {oneProject.website ? (
+                      {oneProject?.website ? (
                         <div className="flex flex-col font-semibold text-xs md:text-sm">
                           <a
                             className="hover:underline"
                             href={oneProject?.website}
                             target="_blank"
                           >
-                            {oneProject?.website}
+                            Production
                           </a>
+                        </div>
+                      ) : (
+                        <p className="text-gray-500 text-justify text-xs md:text-sm">
+                          Details coming soon...
+                        </p>
+                      )}
+
+                      {oneProject?.prototype ? (
+                        <div className="flex flex-col font-semibold text-xs md:text-sm">
+                          <Link
+                            className="hover:underline"
+                            href={oneProject?.prototype}
+                            target="_blank"
+                          >
+                            Prototype
+                          </Link>
                         </div>
                       ) : (
                         <p className="text-gray-500 text-justify text-xs md:text-sm">
@@ -178,6 +197,7 @@ function Project({ setOneProjectDetail, oneProjectDetail, projects }) {
                             src={GitHub}
                             className="w-5 h-5"
                             name="My github"
+                            alt="My github"
                           />
                         </a>
                         <p className="">GitHub</p>
@@ -200,9 +220,13 @@ function Project({ setOneProjectDetail, oneProjectDetail, projects }) {
                     </div>
                   </div>
 
-                  {/* <div className="border w-full bg-black absolute">
-                      <p>Open Project </p>
-                </div> */}
+                  <div className="flex w-full h-12 bg-[#efe9e4] absolute bottom-0 left-0 right-0">
+                    <button className="text-base w-full text-center md:text-lg font-semibold">
+                      <Link href={`/project/${oneProject.slug.current}`}>
+                        View More
+                      </Link>
+                    </button>
+                  </div>
                 </m.div>
               </div>
             </div>

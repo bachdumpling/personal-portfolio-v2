@@ -1,21 +1,22 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { getProjectBySlug } from "../../../lib/sanity";
-import { ArrowLeftCircleIcon } from "@heroicons/react/24/outline";
-import { GlobeAltIcon } from "@heroicons/react/24/solid";
-import GitHub from "../components/icons/github.svg";
 import Image from "next/image";
 import urlFor from "../../../lib/urlFor";
 import { TechnologyModal } from "../components/Technology";
 import { PortableText } from "@portabletext/react";
 import portableTextComponents from "../../../lib/portableTextComponents";
 import Layout from "../components/Layout";
+import Link from "next/link";
+import Loading from "../components/Loading";
 
 const ProjectPage = () => {
   const router = useRouter();
   const { slug } = router.query;
 
   const [project, setProject] = useState(null);
+  const { url, width, height } = project?.iframeEmbed || {};
+  const aspectRatio = (width / height) * 100;
 
   useEffect(() => {
     if (!slug) return;
@@ -28,17 +29,41 @@ const ProjectPage = () => {
     fetchData();
   }, [slug]);
 
-  if (!project) return <p>Loading...</p>;
+  if (!project) return <Loading />;
 
   return (
     <Layout>
       <div className="md:max-w-4xl md:mx-5 lg:mx-auto z-0 mx-5 pt-10">
         <div className="h-full w-full">
-          <div className="pb-8">
+          <div className="pb-8 flex ">
             <p className="text-2xl md:text-5xl font-bold">{project.title}</p>
+
+            {project?.website && (
+              <div className="flex justify-center mt-auto px-6 cursor-pointer">
+                <Link
+                  className="text-gray-500 text-sm md:text-base underline md:no-underline hover:underline"
+                  href={project?.website}
+                  target="_blank"
+                >
+                  Production
+                </Link>
+              </div>
+            )}
+
+            {project?.prototype && (
+              <div className="flex justify-center mt-auto cursor-pointer">
+                <Link
+                  className="text-gray-500 text-sm md:text-base underline md:no-underline hover:underline"
+                  href={project?.prototype}
+                  target="_blank"
+                >
+                  Prototype
+                </Link>
+              </div>
+            )}
           </div>
 
-          <div className="flex justify-center items-center w-full h-44 md:h-96">
+          <div className="flex justify-center items-center w-full h-44 sm:h-72 md:h-96">
             <div className="relative w-full md:w-3/4 shadow-lg h-full">
               <Image
                 fill={true}
@@ -50,18 +75,18 @@ const ProjectPage = () => {
           </div>
 
           <div>
-            <div className="pt-5 flex justify-between items-center">
-              <p className="text-md md:text-lg font-semibold">About</p>
+            <div className="mt-10 mb-4 flex justify-between items-center">
+              <p className="text-lg md:text-2xl font-semibold">About</p>
             </div>
-            <p className="text-black text-justify text-xs md:text-sm">
+            <p className="text-black text-justify text-sm md:text-base">
               {project.longDescription}
             </p>
           </div>
 
           <div>
-            <p className="pt-5 text-md md:text-lg font-semibold">
-              Technologies
-            </p>
+            <div className="mt-10 mb-4 flex justify-between items-center">
+              <p className="text-lg md:text-2xl font-semibold">Technologies</p>
+            </div>
             <div className="flex justify-start items-center space-x-4 overflow-x-auto overflow-y-hidden scrollbar-hide">
               {project.technology.map((tech) => {
                 return <TechnologyModal tech={tech} key={Math.random()} />;
@@ -69,47 +94,28 @@ const ProjectPage = () => {
             </div>
           </div>
 
-          <div>
-            <div className="flex gap-2 pt-5 text-md md:text-lg font-semibold justify-start items-center">
-              <a href="https://github.com/bachdumpling">
-                <GlobeAltIcon className="w-5 h-5" name="My github" />
-              </a>
-              <p className="">Website</p>
-            </div>
-            {project.website ? (
-              <div className="flex flex-col font-semibold text-xs md:text-sm">
-                <a
-                  className="hover:underline"
-                  href={project?.website}
-                  target="_blank"
-                >
-                  {project?.website}
-                </a>
-              </div>
-            ) : (
-              <p className="text-gray-500 text-justify text-xs md:text-sm">
-                Details coming soon...
-              </p>
-            )}
-          </div>
-
-          <div>
-            <div className="flex gap-2 pt-5 text-md md:text-lg font-semibold justify-start items-center">
-              <a href="https://github.com/bachdumpling">
-                <Image src={GitHub} className="w-5 h-5" name="My github" />
-              </a>
-              <p className="">GitHub</p>
-            </div>
-            <div className="flex flex-col font-semibold text-xs md:text-sm">
-              <a className="hover:underline" href={project.github.githubClient}>
-                {project.github.githubClient}
-              </a>
-
-              <a className="hover:underline" href={project.github.githubServer}>
-                {project.github.githubServer}
-              </a>
-            </div>
-          </div>
+          {/* <div
+            className="iframe-container"
+            style={{
+              position: "relative",
+              width: "100%",
+              paddingBottom: `${aspectRatio}%`,
+              height: 0,
+            }}
+          >
+            <iframe
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                border: "1px solid rgba(0, 0, 0, 0.1)",
+              }}
+              src={url}
+              allowFullScreen
+            />
+          </div> */}
 
           <div className="">
             <PortableText

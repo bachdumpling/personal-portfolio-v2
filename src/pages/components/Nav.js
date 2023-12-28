@@ -43,18 +43,6 @@ function Nav() {
         </div>
 
         <div className="col-span-1">
-          {params === "/resume" ? (
-            <Link href="/resume">
-              <p className="navBtn font-semibold text-black">Resume</p>
-            </Link>
-          ) : (
-            <Link href="/resume">
-              <p className="navBtn">Resume</p>
-            </Link>
-          )}
-        </div>
-
-        <div className="col-span-1">
           {params === "/project" ? (
             <Link href="/project">
               <p className="navBtn font-semibold text-black">Project</p>
@@ -185,23 +173,6 @@ function Nav() {
                   {params === "/about" ? (
                     <div className="w-full flex justify-center">
                       <div className="mt-1 w-16 h-[1px] bg-gray-800 rounded-md "></div>
-                    </div>
-                  ) : null}
-                </div>
-
-                <div className="flex flex-col justify-center items-center">
-                  <Link to="/resume">
-                    <p
-                      onClick={() => {
-                        setOpenNav(false);
-                      }}
-                    >
-                      RESUME
-                    </p>
-                  </Link>
-                  {params === "/resume" ? (
-                    <div className="w-full flex justify-center">
-                      <div className="mt-1 w-20 h-[1px] bg-gray-800 rounded-md "></div>
                     </div>
                   ) : null}
                 </div>

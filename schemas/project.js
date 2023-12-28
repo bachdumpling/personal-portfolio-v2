@@ -43,6 +43,11 @@ export default defineType({
       type: "url",
     }),
     {
+      name: "prototype",
+      title: "Prototype",
+      type: "url",
+    },
+    {
       name: "github",
       title: "Github",
       type: "object",
@@ -58,9 +63,27 @@ export default defineType({
       of: [{ type: "string" }],
     },
     defineField({
-      name: "embed",
-      title: "Embeded Link",
-      type: "url",
+      name: "iframeEmbed",
+      title: "Iframe Embed",
+      type: "object",
+      fields: [
+        {
+          name: "url",
+          title: "URL",
+          type: "url",
+          description: "The URL to embed.",
+        },
+        {
+          name: "width",
+          title: "Width",
+          type: "number",
+        },
+        {
+          name: "height",
+          title: "Height",
+          type: "number",
+        },
+      ],
     }),
     defineField({
       name: "createdAt",
@@ -72,7 +95,7 @@ export default defineType({
     //   title: "Body",
     //   type: "blockContent",
     // }),
-    ({
+    {
       name: "body",
       title: "Body",
       type: "array",
@@ -94,7 +117,7 @@ export default defineType({
         },
         // You can include other types as well, such as video or custom components
       ],
-    }),
+    },
   ],
 
   // preview: {
