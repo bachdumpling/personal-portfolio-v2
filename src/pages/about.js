@@ -110,8 +110,8 @@ function About() {
                     20% API usage and 1000+ monthly user engagements.
                   </li>
                   <li>
-                    Improved Blacklight's performance by 25% by optimizing its
-                    backend using Node.js and AWS Lambda/S3.
+                    Improved Blacklight&apos;s performance by 25% by optimizing
+                    its backend using Node.js and AWS Lambda/S3.
                   </li>
                 </ul>
               </div>
