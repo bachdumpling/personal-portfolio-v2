@@ -63,16 +63,27 @@ const ProjectPage = () => {
             )}
           </div>
 
-          <div className="flex justify-center items-center w-full h-44 sm:h-72 md:h-96 my-4 md:my-8">
-            <div className="relative w-full md:w-3/4 shadow-lg h-full">
+          {project?.animatedGif ? (
+            <div className="flex justify-center items-center my-4 md:my-8 shadow-lg w-full h-full">
               <Image
-                fill={true}
+                width={1200}
+                height={800}
+                className="object-cover"
+                src={urlFor(project.animatedGif).url()}
+                alt={project.title + " - Animated GIF"}
+              />
+            </div>
+          ) : (
+            <div className="flex justify-center items-center my-4 md:my-8 shadow-lg w-full h-full">
+              <Image
+                width={1200}
+                height={800}
                 className="object-cover"
                 src={urlFor(project.mainImage).url()}
                 alt={project.title}
               />
             </div>
-          </div>
+          )}
 
           <div>
             <div className="mt-10 mb-4 flex justify-between items-center">
@@ -123,19 +134,6 @@ const ProjectPage = () => {
               allowFullScreen
             />
           </div> */}
-
-          {project.animatedGif && (
-            <div className="flex justify-center items-center w-full h-[225px] sm:h-72 md:h-[425px] my-4 md:my-8">
-              <div className="relative w-full md:w-3/4 shadow-lg h-full bg-black">
-                <Image
-                  fill={true}
-                  className="object-cover scale-[0.95] md:scale-[1] border-red-50"
-                  src={urlFor(project.animatedGif).url()}
-                  alt={project.title + " - Animated GIF"}
-                />
-              </div>
-            </div>
-          )}
 
           <div className="">
             <PortableText

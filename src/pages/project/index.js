@@ -105,10 +105,12 @@ function Project({ projects }) {
                       </p>
                     </div>
 
-                    <div className="flex justify-center items-center w-full h-44 md:h-72">
+                    <div className="flex justify-center items-center">
                       <div className="relative w-full shadow-lg h-full">
                         <Image
-                          fill={true}
+                          // fill={true}
+                          width={1200}
+                          height={800}
                           className="object-cover"
                           src={urlFor(oneProject.mainImage).url()}
                           alt={oneProject.title || "Project Image"}
