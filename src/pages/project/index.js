@@ -6,8 +6,6 @@ import { ArrowLeftCircleIcon } from "@heroicons/react/24/outline";
 import { GlobeAltIcon } from "@heroicons/react/24/solid";
 import GitHub from "../components/icons/github.svg";
 import Image from "next/image";
-import { useRouter } from "next/router";
-
 import { client } from "../../../lib/sanity.client";
 import urlFor from "../../../lib/urlFor";
 import Link from "next/link";
@@ -23,15 +21,13 @@ export async function getStaticProps() {
   };
 }
 
-function Project({ setOneProjectDetail, oneProjectDetail, projects }) {
-  // console.log("projects: ", projects);
-
-  const router = useRouter();
+function Project({ projects }) {
+  console.log("projects: ", projects);
   const [openProject, setOpenProject] = useState(false);
   const [oneProject, setOneProject] = useState([]);
 
   const projectCards = projects
-    .sort((a, b) => b.createdAt - a.createdAt)
+    .sort((a, b) => b._createdAt - a._createdAt)
     .map((project) => {
       return (
         <div
@@ -62,7 +58,7 @@ function Project({ setOneProjectDetail, oneProjectDetail, projects }) {
         <div className="max-w-4xl mx-5 lg:mx-auto pt-10 overflow-y-hidden">
           <h1 className="text-5xl font-extrabold pb-8">Project.</h1>
           <div
-            className={`grid lg:grid-cols-2 grid-cols-1 grid-flow-row gap-5 mx-2 my-2 py-2`}
+            className={`grid lg:grid-cols-2 grid-cols-1 grid-flow-row gap-6 my-2 py-2`}
           >
             {projectCards}
           </div>

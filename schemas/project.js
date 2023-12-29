@@ -43,6 +43,16 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "animatedGif",
+      title: "Animated GIF",
+      description: "Upload an animated GIF.",
+      type: "image",
+      options: {
+        accept: "image/gif", // Specify that only GIF images are accepted
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: "website",
       title: "Website",
       type: "url",

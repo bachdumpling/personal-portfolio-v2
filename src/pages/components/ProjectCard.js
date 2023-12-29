@@ -8,7 +8,7 @@ function ProjectCard({ project }) {
     <div className="col-span-1 row-span-1 flex cursor-pointer shadow-md rounded-lg h-full w-full">
       <div className="relative overflow-hidden bg-no-repeat bg-cover w-full h-full">
         {project?.mainImage && (
-          <div className="flex justify-center items-center w-full md:h-64 h-48 sm:h-[450px]">
+          <div className="flex justify-center items-center w-full md:h-60 h-48 sm:h-[450px]">
             <div className="relative w-full shadow-lg h-full">
               <Image
                 fill={true}

@@ -27,7 +27,7 @@ function Nav() {
 
       {/* Right */}
       {/* <div className="hidden md:visible"> */}
-      <div className="grid-flow-col grid-rows-1 grid-cols-5 w-96 justify-items-center text-gray-500 text-lg invisible md:visible inline-grid gap-x-10">
+      <div className="grid-flow-col grid-rows-1 grid-cols-4 w-96 justify-items-center text-gray-500 text-lg invisible md:visible inline-grid gap-x-10">
         <div className="col-span-1">
           {params === "/about" ? (
             <>
