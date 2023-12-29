@@ -65,7 +65,7 @@ const ProjectPage = () => {
 
           {project?.animatedGif ? (
             <div className="flex justify-center items-center my-4 md:my-8 shadow-lg w-full h-full">
-              <Image
+              <img
                 width={1200}
                 height={800}
                 className="object-cover"

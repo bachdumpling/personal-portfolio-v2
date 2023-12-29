@@ -55,7 +55,7 @@ function Project({ projects }) {
         transition={{ duration: 0.75 }}
         exit={{ opacity: 0 }}
       >
-        <div className="max-w-4xl mx-5 lg:mx-auto pt-10 overflow-y-hidden">
+        <div className="max-w-4xl mx-5 lg:mx-auto pt-4 md:pt-10 overflow-y-hidden">
           <h1 className="text-5xl font-extrabold pb-8">Project.</h1>
           <div
             className={`grid lg:grid-cols-2 grid-cols-1 grid-flow-row gap-6 my-2 py-2`}
@@ -231,13 +231,13 @@ function Project({ projects }) {
                       )}
                   </div>
 
-                  <div className="flex w-full h-12 bg-[#efe9e4] absolute bottom-0 left-0 right-0">
-                    <button className="text-base w-full text-center md:text-lg font-semibold">
-                      <Link href={`/project/${oneProject.slug.current}`}>
+                  <Link href={`/project/${oneProject.slug.current}`}>
+                    <div className="flex w-full h-12 bg-[#efe9e4] absolute bottom-0 left-0 right-0">
+                      <button className="text-base w-full text-center md:text-lg font-semibold">
                         View More
-                      </Link>
-                    </button>
-                  </div>
+                      </button>
+                    </div>
+                  </Link>
                 </m.div>
               </div>
             </div>

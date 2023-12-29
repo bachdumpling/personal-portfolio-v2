@@ -34,32 +34,29 @@ function Hero() {
           <div className="md:pt-14 md:pb-5 pt-10">
             <MainIntro />
           </div>
-          <p className="text-gray-500 text-sm md:text-lg py-5 text-justify md:text-left">
-            I&apos;m a developer 📱, digital creator 📷, & curious optimist
-            🦦. Right now, I&apos;m probably exploring new hobbies,
-            activities, and general knowledge; but I&apos;m always ready to
-            collaborate with creatives and businesses.
+          <p className="text-sm md:text-lg py-5 text-justify md:text-left text-slate-600">
+            I&apos;m a developer 📱, digital creator 📷, & curious optimist 🦦.
+            Right now, I&apos;m probably exploring new hobbies, activities, and
+            general knowledge; but I&apos;m always ready to collaborate with
+            creatives and businesses.
           </p>
-          {/* <p className="text-gray-500 text-sm md:text-lg leading-10 md:leading-normal">
+          <p className="text-sm md:text-lg leading-10 md:leading-normal text-slate-600">
             View my
-            <Link to="/about">
+            <Link href="/about">
               <span className={`heroBtn`}>About</span>,
             </Link>{" "}
-            <Link to="/resume">
-              <span className={`heroBtn`}>Resume</span>,
-            </Link>{" "}
-            <Link to="/project">
+            <Link href="/project">
               <span className={`heroBtn`}>Projects</span>, or
             </Link>{" "}
-            <Link to="/contact">
+            <Link href="/contact">
               <span className={`heroBtn`}>Contact</span> me.
             </Link>
-          </p> */}
+          </p>
         </div>
 
         {/* <Link href="/about"> */}
         <div className="pt-5 md:pt-10 flex space-x-3 cursor-pointer">
-          <p className="text-gray-500 text-md hover:underline">
+          <p className="text-slate-600 text-md hover:underline">
             See more about me
           </p>
           <div className="rotate-90 ">

@@ -52,7 +52,7 @@ function MainIntro() {
 
   return (
     <div className="flex flex-col">
-      <div className="text-3xl md:text-5xl font-inter font-bold flex flex-row">
+      <div className="text-3xl md:text-5xl text-black text-opacity-[80%] font-inter font-bold flex flex-row">
         <TextTransition inline={true} springConfig={presets.slow}>
           {greetings[index % greetings.length]}
         </TextTransition>
