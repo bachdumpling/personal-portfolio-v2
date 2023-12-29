@@ -23,7 +23,7 @@ export async function getStaticProps() {
 }
 
 function Project({ setOneProjectDetail, oneProjectDetail, projects }) {
-  console.log("projects: ", projects);
+  // console.log("projects: ", projects);
 
   const router = useRouter();
   const [openProject, setOpenProject] = useState(false);
@@ -36,6 +36,7 @@ function Project({ setOneProjectDetail, oneProjectDetail, projects }) {
         <div
           onClick={(e) => {
             setOneProject(project);
+            console.log("one project: ", oneProject);
             setOpenProject(!openProject);
           }}
           key={project._id}
@@ -107,14 +108,15 @@ function Project({ setOneProjectDetail, oneProjectDetail, projects }) {
                       </p>
                     </div>
 
-                    <div className="w-full h-88 shadow-md">
-                      <Image
-                        width={500}
-                        height={500}
-                        className="bg-cover"
-                        src={urlFor(projects[0].mainImage).url()}
-                        alt={projects[0].name || "Project Image"}
-                      />
+                    <div className="flex justify-center items-center w-full h-44 md:h-72">
+                      <div className="relative w-full shadow-lg h-full">
+                        <Image
+                          fill={true}
+                          className="object-cover"
+                          src={urlFor(oneProject.mainImage).url()}
+                          alt={oneProject.title || "Project Image"}
+                        />
+                      </div>
                     </div>
 
                     <div>
@@ -127,11 +129,12 @@ function Project({ setOneProjectDetail, oneProjectDetail, projects }) {
                         {/* {oneProject.longDescription} */}
                         {oneProject?.longDescription
                           .split("\n")
-                          .map((line, index) => (
-                            // <p key={index}>{line}</p>
+                          .map((line, index, array) => (
                             <span key={index}>
                               {line}
-                              <br />
+                              {index !==
+                                oneProject?.longDescription.split("\n").length -
+                                  1 && <br />}
                             </span>
                           ))}
                       </p>
@@ -157,15 +160,15 @@ function Project({ setOneProjectDetail, oneProjectDetail, projects }) {
                         </a>
                         <p className="">Links</p>
                       </div>
-                      {oneProject?.website ? (
+                      {oneProject?.website || oneProject?.prototype ? (
                         <div className="flex flex-col font-semibold text-xs md:text-sm">
-                          <a
+                          <Link
                             className="hover:underline"
                             href={oneProject?.website}
                             target="_blank"
                           >
                             Production
-                          </a>
+                          </Link>
                         </div>
                       ) : (
                         <p className="text-gray-500 text-justify text-xs md:text-sm">
@@ -173,7 +176,7 @@ function Project({ setOneProjectDetail, oneProjectDetail, projects }) {
                         </p>
                       )}
 
-                      {oneProject?.prototype ? (
+                      {oneProject?.prototype && (
                         <div className="flex flex-col font-semibold text-xs md:text-sm">
                           <Link
                             className="hover:underline"
@@ -183,7 +186,9 @@ function Project({ setOneProjectDetail, oneProjectDetail, projects }) {
                             Prototype
                           </Link>
                         </div>
-                      ) : (
+                      )}
+
+                      {!oneProject?.website && !oneProject?.prototype && (
                         <p className="text-gray-500 text-justify text-xs md:text-sm">
                           Details coming soon...
                         </p>
@@ -205,19 +210,26 @@ function Project({ setOneProjectDetail, oneProjectDetail, projects }) {
                       <div className="flex flex-col font-semibold text-xs md:text-sm">
                         <a
                           className="hover:underline"
-                          href={oneProject.github.githubClient}
+                          href={oneProject?.github?.githubClient}
                         >
-                          {oneProject.github.githubClient}
+                          {oneProject?.github?.githubClient}
                         </a>
 
                         <a
                           className="hover:underline"
-                          href={oneProject.github.githubServer}
+                          href={oneProject?.github?.githubServer}
                         >
-                          {oneProject.github.githubServer}
+                          {oneProject?.github?.githubServer}
                         </a>
                       </div>
                     </div>
+
+                    {!oneProject?.github?.githubClient &&
+                      !oneProject?.github?.githubServer && (
+                        <p className="text-gray-500 text-justify text-xs md:text-sm">
+                          Details coming soon...
+                        </p>
+                      )}
                   </div>
 
                   <div className="flex w-full h-12 bg-[#efe9e4] absolute bottom-0 left-0 right-0">

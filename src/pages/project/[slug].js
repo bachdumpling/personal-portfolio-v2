@@ -79,7 +79,13 @@ const ProjectPage = () => {
               <p className="text-lg md:text-2xl font-semibold">About</p>
             </div>
             <p className="text-black text-justify text-sm md:text-base">
-              {project.longDescription}
+              {project?.longDescription.split("\n").map((line, index) => (
+                // <p key={index}>{line}</p>
+                <span key={index}>
+                  {line}
+                  {index !== project?.longDescription.split("\n").length - 1 && <br />}
+                </span>
+              ))}
             </p>
           </div>
 
