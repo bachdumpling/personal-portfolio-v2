@@ -6,8 +6,7 @@ function Footer() {
   const { theme } = useTheme();
 
   const themeClasses =
-    theme === "dark" ? "bg-dark-background text-white" : "bg-white text-black";
-  const textColor = theme === "dark" ? "text-slate-200" : "text-slate-600";
+    theme === "dark" ? "bg-dark-background text-dark-text" : "bg-light-background text-light-text";
 
   return (
     <div

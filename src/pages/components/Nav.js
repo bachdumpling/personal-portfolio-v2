@@ -19,9 +19,8 @@ function Nav() {
   };
   const themeClasses =
     theme === "dark"
-      ? "bg-dark-background text-white"
-      : "bg-white text-black text-opacity-[80%]";
-  const textColor = theme === "dark" ? "text-slate-200" : "text-slate-600";
+      ? "bg-dark-background text-dark-text"
+      : "bg-light-background text-light-text";
 
   return (
     <div
@@ -43,7 +42,9 @@ function Nav() {
           {params === "/about" ? (
             <>
               <Link href="/about">
-                <p className="navBtn font-semibold text-black">About</p>
+                <p className="navBtn font-semibold text-light-accent dark:text-dark-accent">
+                  About
+                </p>
               </Link>
             </>
           ) : (
@@ -56,7 +57,9 @@ function Nav() {
         <div className="col-span-1">
           {params === "/project" ? (
             <Link href="/project">
-              <p className="navBtn font-semibold text-black">Project</p>
+              <p className="navBtn font-semibold text-light-accent dark:text-dark-accent">
+                Project
+              </p>
             </Link>
           ) : (
             <Link href="/project">
@@ -68,7 +71,9 @@ function Nav() {
         <div className="col-span-1">
           {params === "/contact" ? (
             <Link href="/contact">
-              <p className="navBtn font-semibold text-black">Contact</p>
+              <p className="navBtn font-semibold text-light-accent dark:text-dark-accent">
+                Contact
+              </p>
             </Link>
           ) : (
             <Link href="/contact">

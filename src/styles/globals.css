@@ -4,11 +4,11 @@
 
 @layer components {
   .navBtn {
-    @apply cursor-pointer hover:scale-125 hover:font-semibold transition-all duration-150 ease-out;
+    @apply cursor-pointer hover:scale-125 hover:font-semibold transition-all duration-150 ease-out text-light-text dark:text-dark-text;
   }
 
   .heroBtn {
-    @apply font-inconsolata ml-1 bg-gray-200 py-[5px] px-3 rounded-md hover:bg-indigo-700 hover:text-white text-gray-800 transition-all duration-500 cursor-pointer ease-out;
+    @apply font-inconsolata ml-1 bg-dark-secondary dark:bg-light-background py-[5px] px-3 rounded-md hover:bg-hover-light hover:text-light-accent dark:hover:bg-hover-dark dark:hover:text-dark-text dark:text-light-text text-dark-text transition-all duration-500 cursor-pointer ease-out;
   }
 
   .pageLayout {
@@ -16,7 +16,7 @@
   }
 
   .pageTitle {
-    @apply text-3xl md:text-5xl font-extrabold;
+    @apply text-3xl md:text-5xl font-extrabold text-light-text dark:text-dark-text;
   }
 
   .pageContent {

@@ -24,8 +24,8 @@ function Hero({ projects }) {
       exit={{ opacity: 0 }}
       className={`w-full h-full ${
         theme === "dark"
-          ? "bg-dark-background text-white"
-          : "bg-white text-black"
+          ? "bg-dark-background text-dark-text"
+          : "bg-background text-text"
       }`}
     >
       {/* <div
@@ -37,9 +37,9 @@ function Hero({ projects }) {
     > */}
       <div className="pageLayout">
         <div className="flex">
-          <div className="bg-gray-900/5 bg-dark-foreground relative w-32 h-32 grid place-items-center rounded-full drop-shadow-md">
+          <div className="bg-light-secondary dark:bg-dark-secondary relative w-32 h-32 grid place-items-center rounded-full drop-shadow-md">
             <Image className="w-32 h-32" src={avatar} />
-            <div className="absolute w-10 h-10 right-2 grid place-items-center rounded-full bg-slate-50 drop-shadow-md bottom-0 translate-y-2">
+            <div className="absolute w-10 h-10 right-2 grid place-items-center rounded-full bg-dark-text drop-shadow-md bottom-0 translate-y-2">
               <p className="text-3xl">🤝</p>
             </div>
           </div>
@@ -49,13 +49,13 @@ function Hero({ projects }) {
           <div className="md:mt-14 md:mb-8 mt-10">
             <MainIntro />
           </div>
-          <p className="text-sm md:text-lg py-5 text-justify md:text-left text-slate-600">
+          <p className="text-sm md:text-lg py-5 text-justify md:text-left">
             I&apos;m a developer 📱, digital creator 📷, & curious optimist 🦦.
             Right now, I&apos;m probably exploring new hobbies, activities, and
             general knowledge; but I&apos;m always ready to collaborate with
             creatives and businesses.
           </p>
-          <p className="text-sm md:text-lg leading-4 md:leading-10 text-slate-600">
+          <p className="text-sm md:text-lg leading-4 md:leading-10 ">
             View my
             <Link href="/about">
               <span className={`heroBtn`}>About</span>,
@@ -86,7 +86,7 @@ function Hero({ projects }) {
 
         <Link href="/project">
           <div className="pt-4 md:pt-4 flex space-x-3 cursor-pointer">
-            <p className="text-slate-600 text-md hover:underline">
+            <p className="text-md hover:underline">
               See more projects
             </p>
             <div className="rotate-90 ">

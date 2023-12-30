@@ -9,7 +9,7 @@ import { ThemeProvider, useTheme } from "../../lib/themeContext";
 const ThemedAppContainer = ({ children }) => {
   const { theme } = useTheme();
   const backgroundColor =
-    theme === "dark" ? "bg-dark-background" : "bg-light-background"; // Update these class names based on your Tailwind config
+    theme === "dark" ? "bg-dark-background" : "bg-light-background";
 
   return <div className={`${backgroundColor} min-h-screen`}>{children}</div>;
 };
