@@ -8,13 +8,13 @@ function ProjectCard({ project }) {
     <div className="col-span-1 row-span-1 flex cursor-pointer shadow-md rounded-lg h-full w-full">
       <div className="relative overflow-hidden bg-no-repeat bg-cover w-full h-full">
         {project?.mainImage && (
-          <div className="flex justify-center items-center w-full">
+          <div className="flex justify-center items-center w-full h-full">
             <div className="relative w-full shadow-lg h-full">
               <Image
                 // fill={true}
                 width={1200}
                 height={800}
-                className="rounded-xl object-cover"
+                className="rounded-lg object-cover w-full h-full"
                 src={urlFor(project.mainImage).url()}
                 alt={project.name || "Project Image"}
               />

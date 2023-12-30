@@ -33,7 +33,7 @@ const ProjectPage = () => {
 
   return (
     <Layout>
-      <div className="md:max-w-4xl md:mx-5 lg:mx-auto z-0 mx-5 pt-10">
+      <div className="md:max-w-4xl md:mx-5 lg:mx-auto z-0 mx-5 pt-0 md:pt-10">
         <div className="h-full w-full">
           <div className="pb-8 flex ">
             <p className="text-2xl md:text-5xl font-bold">{project.title}</p>
@@ -64,7 +64,7 @@ const ProjectPage = () => {
           </div>
 
           {project?.animatedGif ? (
-            <div className="flex justify-center items-center my-4 md:my-8 shadow-lg w-full h-full">
+            <div className="flex justify-center items-center my-2 md:my-6 shadow-lg w-full h-full">
               <img
                 width={1200}
                 height={800}
@@ -74,7 +74,7 @@ const ProjectPage = () => {
               />
             </div>
           ) : (
-            <div className="flex justify-center items-center my-4 md:my-8 shadow-lg w-full h-full">
+            <div className="flex justify-center items-center my-2 md:my-6 shadow-lg w-full h-full">
               <Image
                 width={1200}
                 height={800}

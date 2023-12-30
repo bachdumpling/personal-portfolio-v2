@@ -1,8 +1,21 @@
 import Head from "next/head";
 import Hero from "./components/Hero";
 import Layout from "./components/Layout";
+import { client } from "../../lib/sanity.client";
 
-export default function Home({}) {
+export async function getStaticProps() {
+  const projects = await client.fetch(
+    `*[_type == "project"] | order(_createdAt desc)[0...4]`
+  );
+  return {
+    props: {
+      projects,
+    },
+    revalidate: 60,
+  };
+}
+
+export default function Home({ projects }) {
   return (
     <Layout>
       <Head>
@@ -12,7 +25,7 @@ export default function Home({}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Hero />
+        <Hero projects={projects} />
       </main>
     </Layout>
   );

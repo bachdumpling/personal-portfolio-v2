@@ -1,22 +1,23 @@
-import Twitter from "./icons/twitter.svg";
-import GitHub from "./icons/github.svg";
-import YouTube from "./icons/youtube.svg";
-import linkedin from "./icons/linkedin.svg";
-import document from "./icons/document.svg";
-import Image from "next/image";
+import React from "react";
+import { useTheme } from "../../../lib/themeContext";
+import LinkedInIcon from "./icons/LinkedInIcon";
+import DocumentIcon from "./icons/DocumentIcon";
+import GitHubIcon from "./icons/GithubIcon";
 
 function SocialLinks() {
-  const fillColor = "#262626";
+  const { theme } = useTheme();
+  const fillColor = theme === "dark" ? "#FFFFFF" : "#000000"; // Change as per your color needs
+
   return (
     <div className="flex flex-row space-x-4">
       <a href="https://github.com/bachdumpling">
-        <Image src={GitHub} className="w-5 h-5" name="My resume" />
+        <GitHubIcon className="w-5 h-5" fill={fillColor} />
       </a>
       <a href="https://www.linkedin.com/in/bachhoangle/">
-        <Image src={linkedin} className="w-5 h-5" />
+        <LinkedInIcon className="w-5 h-5" fill={fillColor} />
       </a>
       <a href="https://drive.google.com/file/d/10nnloQtrAujyDqxdxJYaIkeS4R7Uaq3p/view?usp=sharing">
-        <Image src={document} className="w-5 h-5" name="My resume" />
+        <DocumentIcon className="w-5 h-5" fill={fillColor} />
       </a>
     </div>
   );

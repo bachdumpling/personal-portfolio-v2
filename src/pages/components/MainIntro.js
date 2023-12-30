@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import TextTransition, { presets } from "react-text-transition";
+import { useTheme } from "../../../lib/themeContext";
 
 const greetings = [
   "Hey there",
@@ -37,22 +38,24 @@ var randomIndex = function (excluding) {
 };
 
 function MainIntro() {
+  const { theme } = useTheme();
+  const textColor =
+    theme === "dark" ? "text-white" : "text-black text-opacity-[80%]";
   const initialGreetingIndex = new Date().getDate() % greetings.length;
   const [index, setIndex] = useState(initialGreetingIndex);
 
   useEffect(() => {
-    const intervalId = setInterval(
-      () => {
-        setIndex((index) => randomIndex(index));
-      },
-      4000 // every 4 sec
-    );
+    const intervalId = setInterval(() => {
+      setIndex((index) => randomIndex(index));
+    }, 4000); // every 4 sec
     return () => clearTimeout(intervalId);
   }, []);
 
   return (
     <div className="flex flex-col">
-      <div className="text-3xl md:text-5xl text-black text-opacity-[80%] font-inter font-bold flex flex-row">
+      <div
+        className={`text-3xl md:text-5xl font-inter font-bold flex flex-row ${textColor}`}
+      >
         <TextTransition inline={true} springConfig={presets.slow}>
           {greetings[index % greetings.length]}
         </TextTransition>
@@ -61,5 +64,4 @@ function MainIntro() {
     </div>
   );
 }
-
 export default MainIntro;
