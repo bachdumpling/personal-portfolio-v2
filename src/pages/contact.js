@@ -37,62 +37,65 @@ function Contact() {
         transition={{ duration: 0.75 }}
         exit={{ opacity: 0 }}
       >
-        <div className="max-w-4xl mx-5 lg:mx-auto pt-10">
-          <h1 className="text-5xl font-extrabold">Contact.</h1>
-
-          <div className="pt-5 pb-12 text-gray-500">
-            <span>
-              Get in touch or send me an email directly on
-              <span className="text-black font-semibold">
-                {" "}
-                lehoangbach7802@gmail.com{" "}
+        <div className="pageLayout">
+          <h1 className="pageTitle">Contact.</h1>
+          <div className="pageContent">
+            <div className="my-4 md:my-8 text-sm md:text-base text-gray-500">
+              <span>
+                Get in touch or send me an email directly on
+                <span className="text-black font-semibold">
+                  {" "}
+                  lehoangbach7802@gmail.com{" "}
+                </span>
               </span>
-            </span>
-          </div>
-          <div className="">
-            <form
-              ref={form}
-              onSubmit={(e) => sendEmail(e)}
-              className="grid grid-flow-row space-y-5 py-2 w-full md:w-1/2"
-            >
-              <input
-                className="rounded-md border-[1px] w-full h-14 indent-5"
-                placeholder="Name"
-                name="user_name"
-                required
-              ></input>
-
-              <input
-                className="rounded-md border-[1px] w-full h-14 indent-5"
-                placeholder="Email"
-                name="user_email"
-                required
-              ></input>
-
-              <textarea
-                className="rounded-md border-[1px] w-full h-32 textAreaContact indent-5 py-5"
-                placeholder="Message"
-                name="message"
-                required
-              ></textarea>
-              <button
-                className="w-1/2 bg-black h-14 text-white rounded-md font-extralight text-sm"
-                type="submit"
-                value="Send"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
-
-          <Link href="/">
-            <div className="pt-12 flex space-x-3 cursor-pointer">
-              <p className="text-black text-md hover:underline">Go back home</p>
-              <div className="rotate-90 ">
-                <ArrowUpIcon className="w-5 rotate-90 animate-bounce" />
-              </div>
             </div>
-          </Link>
+            <div className="">
+              <form
+                ref={form}
+                onSubmit={(e) => sendEmail(e)}
+                className="grid grid-flow-row space-y-5 py-2 w-full md:w-1/2"
+              >
+                <input
+                  className="rounded-md border-[1px] w-full h-14 indent-5"
+                  placeholder="Name"
+                  name="user_name"
+                  required
+                ></input>
+
+                <input
+                  className="rounded-md border-[1px] w-full h-14 indent-5"
+                  placeholder="Email"
+                  name="user_email"
+                  required
+                ></input>
+
+                <textarea
+                  className="rounded-md border-[1px] w-full h-32 textAreaContact indent-5 py-5"
+                  placeholder="Message"
+                  name="message"
+                  required
+                ></textarea>
+                <button
+                  className="w-1/2 bg-black h-14 text-white rounded-md font-extralight text-sm"
+                  type="submit"
+                  value="Send"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+
+            <Link href="/">
+              <div className="my-4 md:my-8 flex space-x-3 cursor-pointer">
+                <p className="text-black text-md hover:underline">
+                  Go back home
+                </p>
+                <div className="rotate-90 ">
+                  <ArrowUpIcon className="w-5 rotate-90 animate-bounce" />
+                </div>
+              </div>
+            </Link>
+          </div>
         </div>
       </m.div>
     </Layout>

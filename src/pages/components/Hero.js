@@ -46,7 +46,7 @@ function Hero({ projects }) {
         </div>
 
         <div className="space-y-2 md:space-y-2">
-          <div className="md:mt-14 md:mb-8 mt-8">
+          <div className="md:mt-14 md:mb-8 mt-10">
             <MainIntro />
           </div>
           <p className="text-sm md:text-lg py-5 text-justify md:text-left text-slate-600">
@@ -55,7 +55,7 @@ function Hero({ projects }) {
             general knowledge; but I&apos;m always ready to collaborate with
             creatives and businesses.
           </p>
-          <p className="text-sm md:text-lg leading-10 md:leading-normal text-slate-600">
+          <p className="text-sm md:text-lg leading-4 md:leading-10 text-slate-600">
             View my
             <Link href="/about">
               <span className={`heroBtn`}>About</span>,
@@ -70,7 +70,7 @@ function Hero({ projects }) {
         </div>
 
         <div className="mt-8 md:mt-10">
-          <h1 className="text-3xl font-extrabold mb-6 md:mb-8">
+          <h1 className="text-xl md:text-3xl font-extrabold mb-6 md:mb-8">
             Recent Projects
           </h1>
           <div

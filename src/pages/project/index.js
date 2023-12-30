@@ -12,7 +12,9 @@ import Link from "next/link";
 import Layout from "../components/Layout";
 
 export async function getStaticProps() {
-  const projects = await client.fetch(`*[_type == "project"]`);
+  const projects = await client.fetch(
+    `*[_type == "project"] | order(_createdAt desc)`
+  );
   return {
     props: {
       projects,
@@ -25,30 +27,28 @@ function Project({ projects }) {
   const [openProject, setOpenProject] = useState(false);
   const [oneProject, setOneProject] = useState([]);
 
-  const projectCards = projects
-    .sort((a, b) => b._createdAt - a._createdAt)
-    .map((project) => {
-      return (
-        <div
-          onClick={(e) => {
-            setOneProject(project);
-            console.log("one project: ", oneProject);
-            setOpenProject(!openProject);
-          }}
+  const projectCards = projects.map((project) => {
+    return (
+      <div
+        onClick={(e) => {
+          setOneProject(project);
+          console.log("one project: ", oneProject);
+          setOpenProject(!openProject);
+        }}
+        key={project._id}
+      >
+        <ProjectCard
+          project={project}
           key={project._id}
-        >
-          <ProjectCard
-            project={project}
-            key={project._id}
-            setOpenProject={setOpenProject}
-          />
-        </div>
-      );
-    });
+          setOpenProject={setOpenProject}
+        />
+      </div>
+    );
+  });
 
   return (
     <Layout>
-      <div
+      <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.75 }}
@@ -56,20 +56,12 @@ function Project({ projects }) {
       >
         <div className="pageLayout overflow-y-hidden">
           <h1 className="pageTitle">Project.</h1>
-          <div
-            className={`grid lg:grid-cols-2 grid-cols-1 grid-flow-row gap-6 my-2 py-2`}
-          >
-            {projectCards}
-          </div>
-          <div>
-            {projects.map((project) => (
-              <div key={project.slug.current}>
-                <Link href={`/project/${project.slug.current}`}>
-                  <p>{project.title}</p>
-                </Link>
-                {/* Other project details */}
-              </div>
-            ))}
+          <div className="pageContent">
+            <div
+              className={`grid lg:grid-cols-2 grid-cols-1 grid-flow-row gap-6 my-2 py-2`}
+            >
+              {projectCards}
+            </div>
           </div>
 
           {/* Project Modal */}
@@ -84,7 +76,7 @@ function Project({ projects }) {
                   className="absolute w-full h-full md:max-w-xl bg-[#FBFCF8] shadow-xl inset-y-0 right-0"
                 >
                   {/* Modal content */}
-                  <div className="py-6 px-6 pb-20 relative h-full w-full overflow-y-auto">
+                  <div className="p-4 md:p-6 pb-20 relative h-full w-full overflow-y-auto">
                     <div
                       onClick={() => {
                         setOpenProject(false);
@@ -142,12 +134,10 @@ function Project({ projects }) {
                       <p className="pt-5 text-md md:text-lg font-semibold">
                         Technologies
                       </p>
-                      <div className="flex justify-start items-center space-x-4 overflow-x-auto overflow-y-hidden scrollbar-hide">
-                        {oneProject.technology.map((tech) => {
-                          return (
-                            <TechnologyModal tech={tech} key={Math.random()} />
-                          );
-                        })}
+                      <div className="flex justify-start items-center space-x-4 overflow overflow-x-auto overflow-y-hidden no-scrollbar">
+                        {oneProject.technology.map((tech) => (
+                          <TechnologyModal tech={tech} key={tech} />
+                        ))}
                       </div>
                     </div>
 
@@ -242,7 +232,7 @@ function Project({ projects }) {
             </div>
           ) : null}
         </div>
-      </div>
+      </m.div>
     </Layout>
   );
 }

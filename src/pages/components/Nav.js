@@ -25,7 +25,7 @@ function Nav() {
 
   return (
     <div
-      className={`flex justify-between py-10 md:py-16 max-w-3xl md:max-w-5xl mx-6 lg:mx-auto ${themeClasses}`}
+      className={`flex justify-between py-12 md:pt-16 max-w-3xl md:max-w-5xl mx-6 lg:mx-auto ${themeClasses}`}
     >
       {/* Left */}
       <Link href="/">

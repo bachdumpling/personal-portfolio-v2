@@ -26,11 +26,11 @@ function ProjectCard({ project }) {
 
           <p className="font-bold text-lg md:text-xl">{project?.title}</p>
 
-          <p className="text-sm md:text-md px-12 pb-2 text-center font-semibold">
-            {project?.shortDescription}
-          </p>
+          <div className="text-xs md:text-base pb-2 md:pb-4 px-2 md:px-10 text-center font-medium">
+            <p>{project?.shortDescription}</p>
+          </div>
 
-          <div className="flex flex-row space-x-2 text-xs mx-10 font-semibold">
+          <div className="flex flex-row flex-wrap justify-center place-content-center space-x-4 mx-2 md:mx-8 font-medium">
             {project?.technology.map((tech) => {
               return <Technology tech={tech} key={tech} />;
             })}

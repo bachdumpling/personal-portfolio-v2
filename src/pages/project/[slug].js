@@ -36,8 +36,7 @@ const ProjectPage = () => {
       <div className="md:max-w-4xl md:mx-5 lg:mx-auto z-0 mx-5 pt-0 md:pt-10">
         <div className="h-full w-full">
           <div className="pb-8 flex ">
-            <p className="text-2xl md:text-5xl font-bold">{project.title}</p>
-
+            <h1 className="pageTitle">{project.title}</h1>
             {project?.website && (
               <div className="flex justify-center mt-auto px-6 cursor-pointer">
                 <Link
@@ -84,35 +83,37 @@ const ProjectPage = () => {
               />
             </div>
           )}
-
-          <div>
-            <div className="mt-10 mb-4 flex justify-between items-center">
-              <p className="text-lg md:text-2xl font-semibold">About</p>
+          <div className="pageContent">
+            <div>
+              <div className="mt-10 mb-4 flex justify-between items-center">
+                <p className="text-lg md:text-2xl font-semibold">About</p>
+              </div>
+              <p className="text-black text-justify text-sm md:text-base">
+                {project?.longDescription.split("\n").map((line, index) => (
+                  // <p key={index}>{line}</p>
+                  <span key={index}>
+                    {line}
+                    {index !==
+                      project?.longDescription.split("\n").length - 1 && <br />}
+                  </span>
+                ))}
+              </p>
             </div>
-            <p className="text-black text-justify text-sm md:text-base">
-              {project?.longDescription.split("\n").map((line, index) => (
-                // <p key={index}>{line}</p>
-                <span key={index}>
-                  {line}
-                  {index !==
-                    project?.longDescription.split("\n").length - 1 && <br />}
-                </span>
-              ))}
-            </p>
-          </div>
 
-          <div>
-            <div className="mt-10 mb-4 flex justify-between items-center">
-              <p className="text-lg md:text-2xl font-semibold">Technologies</p>
+            <div>
+              <div className="mt-10 mb-4 flex justify-between items-center">
+                <p className="text-lg md:text-2xl font-semibold">
+                  Technologies
+                </p>
+              </div>
+              <div className="flex justify-start items-center space-x-4 overflow-x-auto overflow-y-hidden scrollbar-hide">
+                {project.technology.map((tech) => {
+                  return <TechnologyModal tech={tech} key={Math.random()} />;
+                })}
+              </div>
             </div>
-            <div className="flex justify-start items-center space-x-4 overflow-x-auto overflow-y-hidden scrollbar-hide">
-              {project.technology.map((tech) => {
-                return <TechnologyModal tech={tech} key={Math.random()} />;
-              })}
-            </div>
-          </div>
 
-          {/* <div
+            {/* <div
             className="iframe-container"
             style={{
               position: "relative",
@@ -135,11 +136,12 @@ const ProjectPage = () => {
             />
           </div> */}
 
-          <div className="">
-            <PortableText
-              value={project.body}
-              components={portableTextComponents}
-            />
+            <div className="">
+              <PortableText
+                value={project.body}
+                components={portableTextComponents}
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@
   }
 
   .heroBtn {
-    @apply font-inconsolata ml-1 bg-gray-200 py-[5px] px-3 rounded-md hover:bg-indigo-700 hover:text-white text-gray-800 transition-all duration-500 cursor-pointer ease-out
+    @apply font-inconsolata ml-1 bg-gray-200 py-[5px] px-3 rounded-md hover:bg-indigo-700 hover:text-white text-gray-800 transition-all duration-500 cursor-pointer ease-out;
   }
 
   .pageLayout {
@@ -16,7 +16,11 @@
   }
 
   .pageTitle {
-    @apply text-3xl md:text-5xl font-extrabold pb-4 md:pb-8;
+    @apply text-3xl md:text-5xl font-extrabold;
+  }
+
+  .pageContent {
+    @apply mt-4 md:mt-8;
   }
 }
 
@@ -24,9 +28,14 @@
   .textAreaContact {
     resize: none;
   }
-  /* ,
-  input::placeholder {
-    padding-top: 10px;
-    padding-left: 10px;
-  } */
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
