@@ -35,7 +35,7 @@ function Hero({ projects }) {
           : "bg-white text-black"
       }
     > */}
-      <div className="md:max-w-5xl mx-5 lg:mx-auto z-0 pt-0 md:pt-10">
+      <div className="pageLayout">
         <div className="flex">
           <div className="bg-gray-900/5 bg-dark-foreground relative w-32 h-32 grid place-items-center rounded-full drop-shadow-md">
             <Image className="w-32 h-32" src={avatar} />
@@ -84,10 +84,10 @@ function Hero({ projects }) {
           </div>
         </div>
 
-        <Link href="/about">
-          <div className="pt-5 md:pt-10 flex space-x-3 cursor-pointer">
+        <Link href="/project">
+          <div className="pt-4 md:pt-4 flex space-x-3 cursor-pointer">
             <p className="text-slate-600 text-md hover:underline">
-              See more about me
+              See more projects
             </p>
             <div className="rotate-90 ">
               <ArrowUpIcon className="w-5 rotate-90 animate-bounce" />

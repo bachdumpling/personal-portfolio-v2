@@ -10,6 +10,14 @@
   .heroBtn {
     @apply font-inconsolata ml-1 bg-gray-200 py-[5px] px-3 rounded-md hover:bg-indigo-700 hover:text-white text-gray-800 transition-all duration-500 cursor-pointer ease-out
   }
+
+  .pageLayout {
+    @apply md:max-w-5xl mx-6 lg:mx-auto pt-0 md:pt-10;
+  }
+
+  .pageTitle {
+    @apply text-3xl md:text-5xl font-extrabold pb-4 md:pb-8;
+  }
 }
 
 @layer utilities {

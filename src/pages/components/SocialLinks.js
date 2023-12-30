@@ -1,8 +1,8 @@
 import React from "react";
 import { useTheme } from "../../../lib/themeContext";
-import LinkedInIcon from "./icons/LinkedInIcon";
-import DocumentIcon from "./icons/DocumentIcon";
-import GithubIcon from "./icons/GithubIcon";
+import LinkedInIcon from "./icons/LinkedInIcon.js";
+import DocumentIcon from "./icons/DocumentIcon.js";
+import GithubIcon from "./icons/GithubIcon.js";
 import Link from "next/link";
 
 function SocialLinks() {

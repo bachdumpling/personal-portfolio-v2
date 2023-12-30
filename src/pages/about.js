@@ -12,7 +12,7 @@ function About() {
         transition={{ duration: 0.75 }}
         exit={{ opacity: 0 }}
       >
-        <div className="max-w-4xl mx-5 lg:mx-auto pt-10">
+        <div className="pageLayout">
           <h1 className="text-5xl font-extrabold pb-12">About Me.</h1>
 
           <h2 className="text-2xl font-semibold pb-5">📖 Education</h2>

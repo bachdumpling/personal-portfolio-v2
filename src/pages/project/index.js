@@ -55,8 +55,8 @@ function Project({ projects }) {
         transition={{ duration: 0.75 }}
         exit={{ opacity: 0 }}
       >
-        <div className="max-w-4xl mx-5 lg:mx-auto pt-4 md:pt-10 overflow-y-hidden">
-          <h1 className="text-5xl font-extrabold pb-8">Project.</h1>
+        <div className="pageLayout overflow-y-hidden">
+          <h1 className="pageTitle">Project.</h1>
           <div
             className={`grid lg:grid-cols-2 grid-cols-1 grid-flow-row gap-6 my-2 py-2`}
           >
