@@ -9,7 +9,6 @@ import { useTheme } from "../../../lib/themeContext";
 import ProjectCard from "./ProjectCard";
 
 function Hero({ projects }) {
-  console.log("projects: ", projects);
   const { theme } = useTheme();
 
   function copyText() {
@@ -36,7 +35,7 @@ function Hero({ projects }) {
           : "bg-white text-black"
       }
     > */}
-      <div className="md:max-w-4xl md:mx-5 lg:mx-auto z-0 pt-10 mx-5 pb-10">
+      <div className="md:max-w-5xl mx-5 lg:mx-auto z-0 pt-0 md:pt-10">
         <div className="flex">
           <div className="bg-gray-900/5 bg-dark-foreground relative w-32 h-32 grid place-items-center rounded-full drop-shadow-md">
             <Image className="w-32 h-32" src={avatar} />
@@ -71,7 +70,9 @@ function Hero({ projects }) {
         </div>
 
         <div className="mt-8 md:mt-10">
-          <h1 className="text-3xl font-extrabold mb-6 md:mb-8">Recent Projects</h1>
+          <h1 className="text-3xl font-extrabold mb-6 md:mb-8">
+            Recent Projects
+          </h1>
           <div
             className={`grid md:grid-cols-2 grid-cols-1 grid-flow-row gap-6 my-2`}
           >

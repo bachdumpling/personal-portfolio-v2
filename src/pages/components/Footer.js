@@ -11,7 +11,7 @@ function Footer() {
 
   return (
     <div
-      className={`${themeClasses} md:max-w-4xl lg:mx-auto pt-4 pb-20 px-6 md:px-0`}
+      className={`${themeClasses} md:max-w-4xl lg:mx-auto pt-10 pb-20 px-6 md:px-0`}
     >
       <div className="flex h-full flex-row justify-end items-center">
         <SocialLinks />
