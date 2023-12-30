@@ -22,7 +22,6 @@ export async function getStaticProps() {
 }
 
 function Project({ projects }) {
-  console.log("projects: ", projects);
   const [openProject, setOpenProject] = useState(false);
   const [oneProject, setOneProject] = useState([]);
 
