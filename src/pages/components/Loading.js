@@ -3,7 +3,7 @@ import Loader from './Loader';
 
 const Loading = () => {
     return (
-        <div className='grid w-full h-screen place-items-center border'>
+        <div className='grid w-full h-screen place-items-center'>
             <Loader />
         </div>
     );

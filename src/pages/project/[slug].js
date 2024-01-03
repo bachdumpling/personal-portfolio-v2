@@ -9,6 +9,7 @@ import portableTextComponents from "../../../lib/portableTextComponents";
 import Layout from "../components/Layout";
 import Link from "next/link";
 import Loading from "../components/Loading";
+import Loader from "../components/Loader";
 
 const ProjectPage = () => {
   const router = useRouter();
@@ -35,9 +36,11 @@ const ProjectPage = () => {
 
   if (!project) return <Loading />; // Display loading animation while project data is being fetched
 
-  const mainImage = project.mainImage ? urlFor(project.mainImage).url() : null;
-  const animatedGif = project.animatedGif
-    ? urlFor(project.animatedGif).url()
+  const mainImage = project?.mainImage
+    ? urlFor(project?.mainImage).url()
+    : null;
+  const animatedGif = project?.animatedGif
+    ? urlFor(project?.animatedGif).url()
     : null;
 
   return (
@@ -49,7 +52,7 @@ const ProjectPage = () => {
             {project?.website && (
               <div className="flex justify-center mt-auto px-6 cursor-pointer">
                 <Link
-                  className="text-light-accent dark:text-dark-accent font-semibold text-sm md:text-base underline md:no-underline hover:underline"
+                  className="text-light-accent dark:text-dark-accent font-semibold text-xs md:text-base underline md:no-underline hover:underline"
                   href={project?.website}
                   target="_blank"
                 >
@@ -61,7 +64,7 @@ const ProjectPage = () => {
             {project?.prototype && (
               <div className="flex justify-center mt-auto cursor-pointer">
                 <Link
-                  className="text-light-accent dark:text-dark-accent font-semibold text-sm md:text-base underline md:no-underline hover:underline"
+                  className="text-light-accent dark:text-dark-accent font-semibold text-xs md:text-base underline md:no-underline hover:underline"
                   href={project?.prototype}
                   target="_blank"
                 >
@@ -95,12 +98,19 @@ const ProjectPage = () => {
 
           {animatedGif ? (
             <>
-              {isGifLoading && <Loading />}
+              {!isGifLoading && (
+                <div className="relative flex justify-center items-center w-full outline-dotted outline-1 outline-light-accent dark:outline-dark-accent h-60 md:h-[400px]">
+                  <Loader />
+                </div>
+              )}
               {/* Display loading animation while GIF is loading */}
               <img
                 src={animatedGif}
                 onLoad={handleGifLoad} // Event to indicate image has finished loading
                 style={{ display: isGifLoading ? "none" : "block" }} // Hide GIF until it's loaded
+                width={1200}
+                height={800}
+                className="object-cover"
                 alt={project.title + " - Animated GIF"}
               />
             </>
