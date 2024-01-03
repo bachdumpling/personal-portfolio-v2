@@ -121,13 +121,13 @@ function Nav() {
         <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.1, ease: "easeIn" }}
+          transition={{ duration: 0.2, ease: "easeIn" }}
         >
           <div
-            className="pt-24 justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+            className="justify-center items-center flex fixed inset-0 z-50 bg-light-background dark:bg-dark-background border py-10 overflow-hidden"
             // style={{transition: 'opacity 0.25s ease'}}
           >
-            <div className="relative w-screen h-screen pt-10 px-5 bg-light-background dark:bg-dark-background z-50">
+            <div className="relative w-full h-full px-4 bg-light-background dark:bg-dark-background inset-0 z-50 border overflow-hidden">
               <div className="h-6 w-6 ml-5 bg-transparent border-0 text-black font-light float-left leading-none outline-none focus:outline-none z-50">
                 <div onClick={toggleTheme} className="navBtn col-span-1">
                   {theme === "dark" ? (
@@ -137,10 +137,12 @@ function Nav() {
                   )}
                 </div>
               </div>
+
               <XMarkIcon
-                className="h-6 w-6 pr-auto mr-5 bg-transparent border-0 text-black font-light float-right leading-none outline-none focus:outline-none"
+                className="h-6 w-6 pr-auto mr-5 bg-transparent border-0 font-light float-right leading-none outline-none focus:outline-none navBtn"
                 onClick={() => setOpenNav(false)}
               />
+
               <div className="flex flex-col justify-center items-center space-y-10 font-bold">
                 <div className="flex flex-col justify-center items-center">
                   <Link href="/">
@@ -154,7 +156,7 @@ function Nav() {
                   </Link>
                   {params === "/" ? (
                     <div className="w-full flex justify-center">
-                      <div className="mt-1 w-16 h-[1px] bg-gray-800 rounded-md "></div>
+                      <div className="mt-1 w-16 h-[1px] bg-light-accent dark:bg-dark-accent rounded-md "></div>
                     </div>
                   ) : null}
                 </div>
@@ -171,7 +173,7 @@ function Nav() {
                   </Link>
                   {params === "/about" ? (
                     <div className="w-full flex justify-center">
-                      <div className="mt-1 w-16 h-[1px] bg-gray-800 rounded-md "></div>
+                      <div className="mt-1 w-16 h-[1px] bg-light-accent dark:bg-dark-accent rounded-md "></div>
                     </div>
                   ) : null}
                 </div>
@@ -188,7 +190,7 @@ function Nav() {
                   </Link>
                   {params === "/project" ? (
                     <div className="w-full flex justify-center">
-                      <div className="mt-1 w-24 h-[1px] bg-gray-800 rounded-md "></div>
+                      <div className="mt-1 w-24 h-[1px] bg-light-accent dark:bg-dark-accent rounded-md "></div>
                     </div>
                   ) : null}
                 </div>
@@ -205,7 +207,7 @@ function Nav() {
                   </Link>
                   {params === "/contact" ? (
                     <div className="w-full flex justify-center">
-                      <div className="mt-1 w-24 h-[1px] bg-gray-800 rounded-md "></div>
+                      <div className="mt-1 w-24 h-[1px] bg-light-accent dark:bg-dark-accent rounded-md "></div>
                     </div>
                   ) : null}
                 </div>
