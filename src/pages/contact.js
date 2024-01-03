@@ -40,7 +40,7 @@ function Contact() {
         <div className="pageLayout">
           <h1 className="pageTitle">Contact.</h1>
           <div className="pageContent">
-            <div className="my-4 md:my-8 text-sm md:text-base text-gray-500">
+            <div className="mb-4 md:mb-8 text-sm md:text-base text-gray-500">
               <span>
                 Get in touch or send me an email directly on
                 <span className="text-black font-semibold">

@@ -15,8 +15,7 @@ const ProjectPage = () => {
   const { slug } = router.query;
 
   const [project, setProject] = useState(null);
-  const { url, width, height } = project?.iframeEmbed || {};
-  const aspectRatio = (width / height) * 100;
+  const [isGifLoading, setIsGifLoading] = useState(true); // New state for GIF loading
 
   useEffect(() => {
     if (!slug) return;
@@ -29,18 +28,28 @@ const ProjectPage = () => {
     fetchData();
   }, [slug]);
 
-  if (!project) return <Loading />;
+  // Helper function to handle GIF load
+  const handleGifLoad = () => {
+    setIsGifLoading(false); // Set loading state to false when GIF is loaded
+  };
+
+  if (!project) return <Loading />; // Display loading animation while project data is being fetched
+
+  const mainImage = project.mainImage ? urlFor(project.mainImage).url() : null;
+  const animatedGif = project.animatedGif
+    ? urlFor(project.animatedGif).url()
+    : null;
 
   return (
     <Layout>
-      <div className="md:max-w-4xl md:mx-5 lg:mx-auto z-0 mx-5 pt-0 md:pt-10">
-        <div className="h-full w-full">
-          <div className="pb-8 flex ">
-            <h1 className="pageTitle">{project.title}</h1>
+      <div className="pageLayout">
+        <div className="h-full w-full dark:text-dark-text">
+          <div className="pageTitle flex">
+            <h1 className>{project.title}</h1>
             {project?.website && (
               <div className="flex justify-center mt-auto px-6 cursor-pointer">
                 <Link
-                  className="text-gray-500 text-sm md:text-base underline md:no-underline hover:underline"
+                  className="text-light-accent dark:text-dark-accent font-semibold text-sm md:text-base underline md:no-underline hover:underline"
                   href={project?.website}
                   target="_blank"
                 >
@@ -52,7 +61,7 @@ const ProjectPage = () => {
             {project?.prototype && (
               <div className="flex justify-center mt-auto cursor-pointer">
                 <Link
-                  className="text-gray-500 text-sm md:text-base underline md:no-underline hover:underline"
+                  className="text-light-accent dark:text-dark-accent font-semibold text-sm md:text-base underline md:no-underline hover:underline"
                   href={project?.prototype}
                   target="_blank"
                 >
@@ -62,8 +71,8 @@ const ProjectPage = () => {
             )}
           </div>
 
-          {project?.animatedGif ? (
-            <div className="flex justify-center items-center my-2 md:my-6 shadow-lg w-full h-full">
+          {/* {project?.animatedGif ? (
+            <div className="flex justify-center items-center my-2 md:my-4 shadow-lg w-full h-full">
               <img
                 width={1200}
                 height={800}
@@ -73,7 +82,7 @@ const ProjectPage = () => {
               />
             </div>
           ) : (
-            <div className="flex justify-center items-center my-2 md:my-6 shadow-lg w-full h-full">
+            <div className="flex justify-center items-center my-2 md:my-4 shadow-lg w-full h-full">
               <Image
                 width={1200}
                 height={800}
@@ -82,13 +91,36 @@ const ProjectPage = () => {
                 alt={project.title}
               />
             </div>
+          )} */}
+
+          {animatedGif ? (
+            <>
+              {isGifLoading && <Loading />}
+              {/* Display loading animation while GIF is loading */}
+              <img
+                src={animatedGif}
+                onLoad={handleGifLoad} // Event to indicate image has finished loading
+                style={{ display: isGifLoading ? "none" : "block" }} // Hide GIF until it's loaded
+                alt={project.title + " - Animated GIF"}
+              />
+            </>
+          ) : (
+            mainImage && (
+              <Image
+                src={mainImage}
+                width={1200}
+                height={800}
+                alt={project.title}
+              />
+            )
           )}
+
           <div className="pageContent">
             <div>
               <div className="mt-10 mb-4 flex justify-between items-center">
                 <p className="text-lg md:text-2xl font-semibold">About</p>
               </div>
-              <p className="text-black text-justify text-sm md:text-base">
+              <p className="text-light-text dark:text-dark-text text-justify text-sm md:text-base">
                 {project?.longDescription.split("\n").map((line, index) => (
                   // <p key={index}>{line}</p>
                   <span key={index}>

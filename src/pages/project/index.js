@@ -58,7 +58,7 @@ function Project({ projects }) {
           <h1 className="pageTitle">Project.</h1>
           <div className="pageContent">
             <div
-              className={`grid lg:grid-cols-2 grid-cols-1 grid-flow-row gap-6 my-2 py-2`}
+              className={`grid lg:grid-cols-2 grid-cols-1 grid-flow-row gap-6 mb-2 pb-2`}
             >
               {projectCards}
             </div>

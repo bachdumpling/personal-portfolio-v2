@@ -105,11 +105,6 @@ export default defineType({
       title: "Created at",
       type: "datetime",
     }),
-    // defineField({
-    //   name: "body",
-    //   title: "Body",
-    //   type: "blockContent",
-    // }),
     {
       name: "body",
       title: "Body",

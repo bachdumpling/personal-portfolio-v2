@@ -24,7 +24,7 @@ function Nav() {
 
   return (
     <div
-      className={`flex justify-between py-12 md:pt-16 max-w-3xl md:max-w-5xl mx-6 lg:mx-auto ${themeClasses}`}
+      className={`flex justify-between py-12 md:pt-16 max-w-3xl mx-6 lg:mx-auto ${themeClasses}`}
     >
       {/* Left */}
       <Link href="/">
@@ -42,7 +42,7 @@ function Nav() {
           {params === "/about" ? (
             <>
               <Link href="/about">
-                <p className="navBtn font-semibold text-light-accent dark:text-dark-accent">
+                <p className="navBtn font-bold text-light-accent dark:text-dark-accent">
                   About
                 </p>
               </Link>

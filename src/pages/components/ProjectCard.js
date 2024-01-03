@@ -24,13 +24,13 @@ function ProjectCard({ project }) {
         <div className="absolute flex flex-col top-0 right-0 bottom-0 left-0 justify-center items-center w-full h-full hover:opacity-100 opacity-0 z-50 transition duration-300 ease-in-out text-sm md:text-lg text-white bg-black bg-opacity-70 space-y-2 rounded-lg">
           {/* <div className=""> */}
 
-          <p className="font-bold text-lg md:text-xl">{project?.title}</p>
+          <p className="font-bold text-base md:text-lg">{project?.title}</p>
 
-          <div className="text-xs md:text-base pb-2 md:pb-4 px-2 md:px-10 text-center font-medium">
+          <div className="text-xs md:text-sm pb-1 md:pb-2 px-2 md:px-10 text-center font-medium">
             <p>{project?.shortDescription}</p>
           </div>
 
-          <div className="flex flex-row flex-wrap justify-center place-content-center space-x-4 mx-2 md:mx-8 font-medium">
+          <div className="flex flex-row flex-wrap justify-center place-content-center space-x-2 mx-2 md:mx-4 font-medium">
             {project?.technology.map((tech) => {
               return <Technology tech={tech} key={tech} />;
             })}

@@ -40,7 +40,7 @@ var randomIndex = function (excluding) {
 function MainIntro() {
   const { theme } = useTheme();
   const textColor =
-    theme === "dark" ? "text-white" : "text-black text-opacity-[80%]";
+    theme === "dark" ? "text-dark-text" : "text-light-text";
   const initialGreetingIndex = new Date().getDate() % greetings.length;
   const [index, setIndex] = useState(initialGreetingIndex);
 
