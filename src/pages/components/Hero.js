@@ -38,7 +38,7 @@ function Hero({ projects }) {
       <div className="pageLayout">
         <div className="flex">
           <div className="bg-light-secondary dark:bg-dark-secondary relative w-32 h-32 grid place-items-center rounded-full drop-shadow-md z-10">
-            <Image className="w-32 h-32" src={avatar} />
+            <Image className="w-32 h-32" src={avatar} alt="avatar"/>
             <div className="absolute w-10 h-10 right-2 grid place-items-center rounded-full bg-dark-text drop-shadow-md bottom-0 translate-y-2">
               <p className="text-3xl">🤝</p>
             </div>
