@@ -37,7 +37,7 @@ function Hero({ projects }) {
     > */}
       <div className="pageLayout">
         <div className="flex">
-          <div className="bg-light-secondary dark:bg-dark-secondary relative w-32 h-32 grid place-items-center rounded-full drop-shadow-md">
+          <div className="bg-light-secondary dark:bg-dark-secondary relative w-32 h-32 grid place-items-center rounded-full drop-shadow-md z-10">
             <Image className="w-32 h-32" src={avatar} />
             <div className="absolute w-10 h-10 right-2 grid place-items-center rounded-full bg-dark-text drop-shadow-md bottom-0 translate-y-2">
               <p className="text-3xl">🤝</p>
@@ -86,9 +86,7 @@ function Hero({ projects }) {
 
         <Link href="/project">
           <div className="pt-4 md:pt-4 flex space-x-3 cursor-pointer">
-            <p className="text-md hover:underline">
-              See more projects
-            </p>
+            <p className="text-md hover:underline">See more projects</p>
             <div className="rotate-90 ">
               <ArrowUpIcon className="w-5 rotate-90 animate-bounce" />
             </div>

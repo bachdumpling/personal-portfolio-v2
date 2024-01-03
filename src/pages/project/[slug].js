@@ -118,9 +118,11 @@ const ProjectPage = () => {
           <div className="pageContent">
             <div>
               <div className="mt-10 mb-4 flex justify-between items-center">
-                <p className="text-lg md:text-2xl font-semibold">About</p>
+                <p className="text-lg md:text-2xl font-semibold dark:text-dark-text text-light-text ">
+                  About
+                </p>
               </div>
-              <p className="text-light-text dark:text-dark-text text-justify text-sm md:text-base">
+              <p className="text-light-text dark:text-dark-text text-justify text-sm md:text-base dark:text-dark-text text-light-text ">
                 {project?.longDescription.split("\n").map((line, index) => (
                   // <p key={index}>{line}</p>
                   <span key={index}>
@@ -134,7 +136,7 @@ const ProjectPage = () => {
 
             <div>
               <div className="mt-10 mb-4 flex justify-between items-center">
-                <p className="text-lg md:text-2xl font-semibold">
+                <p className="text-lg md:text-2xl font-semibold dark:text-dark-text text-light-text ">
                   Technologies
                 </p>
               </div>

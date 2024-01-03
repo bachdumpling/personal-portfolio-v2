@@ -121,14 +121,14 @@ function Nav() {
         <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.2, ease: "easeIn" }}
+          transition={{ duration: 0.1, ease: "easeIn" }}
         >
           <div
             className="pt-24 justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
             // style={{transition: 'opacity 0.25s ease'}}
           >
-            <div className="relative w-screen h-screen pt-10 px-5 bg-white">
-              <div className="h-6 w-6 ml-5 bg-transparent border-0 text-black font-light float-left leading-none outline-none focus:outline-none">
+            <div className="relative w-screen h-screen pt-10 px-5 bg-light-background dark:bg-dark-background z-50">
+              <div className="h-6 w-6 ml-5 bg-transparent border-0 text-black font-light float-left leading-none outline-none focus:outline-none z-50">
                 <div onClick={toggleTheme} className="navBtn col-span-1">
                   {theme === "dark" ? (
                     <SunIcon className="w-6 h-6" />
