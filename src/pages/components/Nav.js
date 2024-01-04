@@ -83,9 +83,9 @@ function Nav() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.2, ease: "easeIn" }}
-          className="justify-center items-center flex fixed inset-0 z-50 bg-light-background dark:bg-dark-background border py-10 overflow-hidden"
+          className="justify-center items-center flex fixed inset-0 z-50 bg-light-background dark:bg-dark-background py-10 overflow-hidden"
         >
-          <div className="relative w-full h-full px-4 bg-light-background dark:bg-dark-background inset-0 z-50 border overflow-hidden">
+          <div className="relative w-full h-full px-4 bg-light-background dark:bg-dark-background inset-0 z-50 overflow-hidden">
             <div className="flex justify-between absolute top-6 left-8 right-8">
               <div onClick={toggleTheme}>
                 {theme === "dark" ? (
