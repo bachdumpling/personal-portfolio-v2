@@ -38,7 +38,7 @@ function Hero({ projects }) {
       <div className="pageLayout">
         <div className="flex">
           <div className="bg-light-secondary dark:bg-dark-secondary relative w-32 h-32 grid place-items-center rounded-full drop-shadow-md z-10">
-            <Image className="w-32 h-32" src={avatar} alt="avatar"/>
+            <Image className="w-32 h-32" src={avatar} alt="avatar" />
             <div className="absolute w-10 h-10 right-2 grid place-items-center rounded-full bg-dark-text drop-shadow-md bottom-0 translate-y-2">
               <p className="text-3xl">🤝</p>
             </div>
@@ -49,14 +49,15 @@ function Hero({ projects }) {
           <div className="md:mt-14 md:mb-8 mt-10">
             <MainIntro />
           </div>
-          <p className="text-sm md:text-lg py-5 text-justify md:text-left">
-            I&apos;m a developer 📱, digital creator 📷, & curious optimist 🦦.
+          <p className="text-sm font-inconsolata md:text-lg py-2 text-justify md:text-left leading-relaxed">
+            {/* I&apos;m a developer 📱, digital creator 📷, & curious optimist 🦦.
             Right now, I&apos;m probably exploring new hobbies, activities, and
             general knowledge; but I&apos;m always ready to collaborate with
-            creatives and businesses.
+            creatives and businesses. */}
+            I build things for the web. Sometimes I feel creative 👀
           </p>
-          <p className="text-sm md:text-lg leading-4 md:leading-10 ">
-            View my
+          <p className="text-sm md:text-lg leading-10 md:leading-10 font-inconsolata">
+            View my{" "}
             <Link href="/about">
               <span className={`heroBtn`}>About</span>,
             </Link>{" "}
@@ -70,7 +71,7 @@ function Hero({ projects }) {
         </div>
 
         <div className="mt-8 md:mt-10">
-          <h1 className="text-xl md:text-3xl font-extrabold mb-6 md:mb-8">
+          <h1 className="text-xl md:text-3xl font-bold mb-6 md:mb-8 text-light-text dark:text-dark-text">
             Recent Projects
           </h1>
           <div
@@ -86,7 +87,7 @@ function Hero({ projects }) {
 
         <Link href="/project">
           <div className="pt-4 md:pt-4 flex space-x-3 cursor-pointer">
-            <p className="text-md hover:underline">See more projects</p>
+            <p className="text-base hover:underline">See more projects</p>
             <div className="rotate-90 ">
               <ArrowUpIcon className="w-5 rotate-90 animate-bounce" />
             </div>

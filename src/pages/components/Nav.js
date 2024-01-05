@@ -31,7 +31,7 @@ function Nav() {
 
   return (
     <div
-      className={`flex justify-between py-12 md:pt-16 max-w-3xl mx-6 lg:mx-auto ${
+      className={`flex justify-between py-12 md:pt-16 max-w-3xl mx-6 md:mx-auto lg:mx-auto ${
         theme === "dark"
           ? "bg-dark-background text-dark-text"
           : "bg-light-background text-light-text"

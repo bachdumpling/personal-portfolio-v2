@@ -9,14 +9,14 @@ import portableTextComponents from "../../../lib/portableTextComponents";
 import Layout from "../components/Layout";
 import Link from "next/link";
 import Loading from "../components/Loading";
-import Loader from "../components/Loader";
+import { motion as m } from "framer-motion";
 
 const ProjectPage = () => {
   const router = useRouter();
   const { slug } = router.query;
 
   const [project, setProject] = useState(null);
-  const [isGifLoading, setIsGifLoading] = useState(true); // New state for GIF loading
+  const [isGifLoading, setIsGifLoading] = useState(true);
 
   useEffect(() => {
     if (!slug) return;
@@ -29,12 +29,7 @@ const ProjectPage = () => {
     fetchData();
   }, [slug]);
 
-  // Helper function to handle GIF load
-  const handleGifLoad = () => {
-    setIsGifLoading(false); // Set loading state to false when GIF is loaded
-  };
-
-  if (!project) return <Loading />; // Display loading animation while project data is being fetched
+  if (!project) return <Loading />;
 
   const mainImage = project?.mainImage
     ? urlFor(project?.mainImage).url()
@@ -45,7 +40,13 @@ const ProjectPage = () => {
 
   return (
     <Layout>
-      <div className="pageLayout">
+      <m.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.75 }}
+        exit={{ opacity: 0 }}
+        className="pageLayout"
+      >
         <div className="h-full w-full dark:text-dark-text">
           <div className="pageTitle flex">
             <h1 className>{project.title}</h1>
@@ -74,56 +75,29 @@ const ProjectPage = () => {
             )}
           </div>
 
-          {/* {project?.animatedGif ? (
-            <div className="flex justify-center items-center my-2 md:my-4 shadow-lg w-full h-full">
-              <img
-                width={1200}
-                height={800}
-                className="object-cover"
-                src={urlFor(project.animatedGif).url()}
-                alt={project.title + " - Animated GIF"}
-              />
-            </div>
-          ) : (
-            <div className="flex justify-center items-center my-2 md:my-4 shadow-lg w-full h-full">
+          <div className="flex justify-center items-center my-2 md:my-4 shadow-lg w-full h-full">
+            {mainImage && isGifLoading && (
               <Image
                 width={1200}
                 height={800}
                 className="object-cover"
-                src={urlFor(project.mainImage).url()}
+                src={mainImage}
                 alt={project.title}
               />
-            </div>
-          )} */}
+            )}
 
-          {animatedGif ? (
-            <>
-              {!isGifLoading && (
-                <div className="relative flex justify-center items-center w-full outline-dotted outline-1 outline-light-accent dark:outline-dark-accent h-60 md:h-[400px]">
-                  <Loader />
-                </div>
-              )}
-              {/* Display loading animation while GIF is loading */}
+            {animatedGif && (
               <img
                 src={animatedGif}
-                onLoad={handleGifLoad} // Event to indicate image has finished loading
-                style={{ display: isGifLoading ? "none" : "block" }} // Hide GIF until it's loaded
+                onLoad={() => setIsGifLoading(false)}
+                style={{ display: isGifLoading ? "none" : "block" }}
                 width={1200}
                 height={800}
                 className="object-cover"
                 alt={project.title + " - Animated GIF"}
               />
-            </>
-          ) : (
-            mainImage && (
-              <Image
-                src={mainImage}
-                width={1200}
-                height={800}
-                alt={project.title}
-              />
-            )
-          )}
+            )}
+          </div>
 
           <div className="pageContent">
             <div>
@@ -132,7 +106,7 @@ const ProjectPage = () => {
                   About
                 </p>
               </div>
-              <p className="text-light-text dark:text-dark-text text-justify text-sm md:text-base dark:text-dark-text text-light-text ">
+              <p className="text-light-text dark:text-dark-text text-justify text-sm md:text-base">
                 {project?.longDescription.split("\n").map((line, index) => (
                   // <p key={index}>{line}</p>
                   <span key={index}>
@@ -188,7 +162,7 @@ const ProjectPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </m.div>
     </Layout>
   );
 };

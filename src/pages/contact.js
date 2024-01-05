@@ -4,8 +4,10 @@ import { motion as m } from "framer-motion";
 import React, { useRef } from "react";
 import Link from "next/link";
 import Layout from "./components/Layout";
+import { useToast } from "@/components/ui/use-toast";
 
 function Contact() {
+  const { toast } = useToast();
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -40,11 +42,23 @@ function Contact() {
         <div className="pageLayout">
           <h1 className="pageTitle">Contact.</h1>
           <div className="pageContent">
-            <div className="mb-4 md:mb-8 text-sm md:text-base text-gray-500">
+            <div className="mb-4 md:mb-8 text-sm md:text-base textStyle">
               <span>
-                Get in touch or send me an email directly on
-                <span className="text-black font-semibold">
-                  {" "}
+                Get in touch or send me an email directly on{" "}
+                <span
+                  onClick={() => {
+                    toast(
+                      {
+                        title: "",
+                        description: "Email copied to clipboard 🤳",
+                      },
+                      { variant: "destructive" },
+                      { autoDismiss: true },
+                      { duration: 2000 }
+                    );
+                  }}
+                  className="linkStyle font-semibold"
+                >
                   lehoangbach7802@gmail.com{" "}
                 </span>
               </span>
@@ -87,7 +101,7 @@ function Contact() {
 
             <Link href="/">
               <div className="my-4 md:my-8 flex space-x-3 cursor-pointer">
-                <p className="text-black text-md hover:underline">
+                <p className="text-black text-base hover:underline">
                   Go back home
                 </p>
                 <div className="rotate-90 ">
