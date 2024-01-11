@@ -1,0 +1,38 @@
+
+        <?xml version="1.0" encoding="UTF-8"?>
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            
+                    <url>
+                        <loc>https://bachle.info/_app</loc>
+                    </url>
+                
+                    <url>
+                        <loc>https://bachle.info/_document</loc>
+                    </url>
+                
+                    <url>
+                        <loc>https://bachle.info/about</loc>
+                    </url>
+                
+                    <url>
+                        <loc>https://bachle.info/contact</loc>
+                    </url>
+                
+                    <url>
+                        <loc>https://bachle.info</loc>
+                    </url>
+                
+                    <url>
+                        <loc>https://bachle.info/project/[slug]</loc>
+                    </url>
+                
+                    <url>
+                        <loc>https://bachle.info/project/index</loc>
+                    </url>
+                
+                    <url>
+                        <loc>https://bachle.info/studio/[[...index]]</loc>
+                    </url>
+                
+        </urlset>
+    

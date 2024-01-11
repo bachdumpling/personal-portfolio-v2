@@ -109,6 +109,7 @@ export default defineType({
       name: "body",
       title: "Body",
       type: "array",
+      description: "Text hierarchy starts with H3",
       of: [
         {
           type: "block",
