@@ -1,9 +1,10 @@
 import { motion as m } from "framer-motion";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 import { client } from "../../../lib/sanity.client";
 import Layout from "../components/Layout";
 import ProjectModal from "../components/ProjectModal";
+import Loading from "../components/Loading";
 
 export async function getStaticProps() {
   const projects = await client.fetch(
@@ -20,6 +21,13 @@ export async function getStaticProps() {
 function Project({ projects }) {
   const [openProject, setOpenProject] = useState(false);
   const [oneProject, setOneProject] = useState([]);
+  const [isLoading, setIsLoading] = useState(true); // New state for loading
+
+  useEffect(() => {
+    if (projects && projects.length > 0) {
+      setIsLoading(false); // Update the loading state when projects are loaded
+    }
+  }, [projects]);
 
   const projectCards = projects.map((project) => {
     return (
@@ -37,6 +45,8 @@ function Project({ projects }) {
       </div>
     );
   });
+
+  if (isLoading) return <Loading />; 
 
   return (
     <Layout>
