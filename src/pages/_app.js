@@ -1,8 +1,5 @@
 import React from "react";
 import "@/src/styles/globals.css";
-import Footer from "./components/Footer";
-import Nav from "./components/Nav";
-import Layout from "./components/Layout";
 import Head from "next/head";
 import { ThemeProvider, useTheme } from "../../lib/themeContext";
 import { Toaster } from "@/components/ui/toaster";
