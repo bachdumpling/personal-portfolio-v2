@@ -90,7 +90,7 @@ function Contact() {
                   required
                 ></textarea>
                 <button
-                  className="w-1/2 bg-black h-14 text-white rounded-md font-extralight text-sm"
+                  className="w-1/2 bg-light-accent dark:bg-dark-accent h-14 text-dark-text dark:text-light-text rounded-md text-sm"
                   type="submit"
                   value="Send"
                 >
@@ -101,11 +101,11 @@ function Contact() {
 
             <Link href="/">
               <div className="my-4 md:my-8 flex space-x-3 cursor-pointer">
-                <p className="text-black text-base hover:underline">
+                <p className="text-light-text dark:text-dark-text text-base hover:underline">
                   Go back home
                 </p>
                 <div className="rotate-90 ">
-                  <ArrowUpIcon className="w-5 rotate-90 animate-bounce" />
+                  <ArrowUpIcon className="text-light-accent dark:text-dark-accent w-5 rotate-90 animate-bounce" />
                 </div>
               </div>
             </Link>
