@@ -26,7 +26,7 @@ function About({ aboutPageData }) {
         exit={{ opacity: 0 }}
       >
         <div className="pageLayout">
-          <h1 className="pageTitle">{aboutPageData.title}</h1>
+          <h1 className="pageTitle">{aboutPageData.title}.</h1>
 
           <div className="">
             <PortableText

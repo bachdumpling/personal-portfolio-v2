@@ -5,19 +5,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        {/* <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-NPH3NVGK6N"
-        />
-        <Script id="google-analytics">
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          
-          gtag('config', 'G-NPH3NVGK6N');
-          `}
-        </Script> */}
         <meta
           name="description"
           content="Bach Le is his personal portfolio website. He is a software engineer who is passionate about building products that improves people's life."
