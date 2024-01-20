@@ -101,7 +101,7 @@ const ProjectPage = () => {
 
           <div className="pageContent">
             <div>
-              <div className="mt-10 mb-4 flex justify-between items-center">
+              <div className="mt-10 mb-2 md:mb-4 flex justify-between items-center">
                 <p className="text-lg md:text-2xl font-semibold dark:text-dark-text text-light-text ">
                   About
                 </p>
@@ -119,12 +119,12 @@ const ProjectPage = () => {
             </div>
 
             <div>
-              <div className="mt-10 mb-4 flex justify-between items-center">
+              <div className="mt-10 mb-2 md:mb-4 flex justify-between items-center">
                 <p className="text-lg md:text-2xl font-semibold dark:text-dark-text text-light-text ">
                   Technologies
                 </p>
               </div>
-              <div className="flex justify-start items-center space-x-4 overflow-x-auto overflow-y-hidden scrollbar-hide">
+              <div className="flex justify-start items-center space-x-4 overflow-x-auto overflow-y-hidden no-scrollbar">
                 {project.technology.map((tech) => {
                   return <TechnologyModal tech={tech} key={Math.random()} />;
                 })}

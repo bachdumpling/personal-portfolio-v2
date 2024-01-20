@@ -19,7 +19,9 @@ export default function App({ Component, pageProps }) {
         <title>Bach Le</title>
       </Head>
       <ThemedAppContainer>
-        <Component {...pageProps} />
+        <div className="font-inter">
+          <Component {...pageProps} />
+        </div>
         <Toaster />
       </ThemedAppContainer>
     </ThemeProvider>

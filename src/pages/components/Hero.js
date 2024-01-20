@@ -64,8 +64,8 @@ function Hero({ projects }) {
             <Link href="/project">
               <span className={`heroBtn`}>Projects</span>, or
             </Link>{" "}
-            <Link href="/contact">
-              <span className={`heroBtn`}>Contact</span>.
+            <Link href="/journal">
+              <span className={`heroBtn`}>Journal</span>.
             </Link>
           </p>
         </div>
