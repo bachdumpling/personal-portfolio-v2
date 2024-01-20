@@ -26,15 +26,15 @@
                     </url>
                 
                     <url>
-                        <loc>https://bachle.info/studio/[[...index]]</loc>
-                    </url>
-                
-                    <url>
                         <loc>https://bachle.info/project/[slug]</loc>
                     </url>
                 
                     <url>
                         <loc>https://bachle.info/project/index</loc>
+                    </url>
+                
+                    <url>
+                        <loc>https://bachle.info/studio/[[...index]]</loc>
                     </url>
                 
         </urlset>
