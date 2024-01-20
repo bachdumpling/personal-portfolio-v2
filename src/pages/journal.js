@@ -28,22 +28,24 @@ export async function getStaticProps() {
 
 function Journal({ photoCollections }) {
   console.log(photoCollections);
-  const [selectedCollection, setSelectedCollection] = useState(null);
+  const [selectedCollection, setSelectedCollection] = useState(
+    photoCollections[0]._id
+  );
 
   return (
     <Layout>
       <div className="pageLayout">
         <h1 className="pageTitle">Journal.</h1>
-        <div className="pageContent">
-          <div className="flex mb-4 no-scrollbar overflow-x-auto">
+        <div className="pageContent mb-6">
+          <div className="flex pb-4 md:pb-10 no-scrollbar overflow-x-auto">
             {/* Collection Buttons */}
             {photoCollections?.map((collection) => (
               <h2
                 key={collection._id}
-                className={`border font-medium flex flex-initial dark:text-dark-text text-light-text  mr-4 text-sm md:text-base px-3 py-1 md:px-3 rounded-md cursor-pointer whitespace-nowrap ${
+                className={`border shadow-md font-medium flex flex-initial dark:text-dark-text text-light-text mr-4 text-sm md:text-base px-3.5 py-1.5 md:px-3.5 rounded-md cursor-pointer whitespace-nowrap text-center justify-center items-center ${
                   selectedCollection === collection._id
-                    ? "bg-light-primary dark:bg-dark-secondary"
-                    : "hover:bg-light-primary dark:hover:bg-dark-secondary"
+                    ? "bg-light-secondary dark:bg-dark-secondary"
+                    : "hover:bg-light-secondary dark:hover:bg-dark-secondary"
                 } border-light-accent dark:border-dark-accent transition-all duration-300 cursor-pointer ease-out`}
                 onClick={() => setSelectedCollection(collection._id)}
               >
@@ -58,7 +60,10 @@ function Journal({ photoCollections }) {
               photoCollections
                 .find((collection) => collection._id === selectedCollection)
                 ?.photos.map((photo) => (
-                  <div key={photo._key} className="">
+                  <div
+                    key={photo._key}
+                    className="shadow-md dark:shadow-lg shadow-light-accent dark:shadow-gray-900"
+                  >
                     <img
                       src={urlFor(photo?.imageUrl)}
                       alt={photo.image.alt}

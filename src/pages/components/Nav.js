@@ -26,6 +26,7 @@ function Nav() {
     // { href: "/", title: "Home" },
     { href: "/about", title: "About" },
     { href: "/project", title: "Project" },
+    { href: "/journal", title: "Journal" },
     { href: "/contact", title: "Contact" },
   ];
 

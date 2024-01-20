@@ -90,7 +90,7 @@ function Contact() {
                   required
                 ></textarea>
                 <button
-                  className="w-1/2 bg-light-accent dark:bg-dark-accent h-14 text-dark-text dark:text-light-text rounded-md text-sm"
+                  className="w-1/2 bg-light-accent dark:bg-dark-accent h-14 text-dark-text dark:text-light-text rounded-md text-sm md:text-base font-medium"
                   type="submit"
                   value="Send"
                 >
