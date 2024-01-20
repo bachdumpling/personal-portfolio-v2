@@ -46,19 +46,17 @@ function Journal({ photoCollections }) {
           <div className="flex pb-4 no-scrollbar overflow-x-auto">
             {/* Collection Buttons */}
             {photoCollections?.map((collection) => (
-              <div>
-                <h2
-                  key={collection._id}
-                  className={`border-[0.2px] shadow-md font-medium flex flex-initial dark:text-dark-text text-light-text mr-4 text-sm md:text-base px-4 py-1 md:px-4 rounded-md cursor-pointer whitespace-nowrap text-center justify-center items-center ${
-                    selectedCollection === collection._id
-                      ? "bg-light-secondary dark:bg-dark-secondary"
-                      : "hover:bg-light-secondary dark:hover:bg-dark-secondary"
-                  } border-light-accent dark:border-dark-accent transition-all duration-300 cursor-pointer ease-out`}
-                  onClick={() => setSelectedCollection(collection._id)}
-                >
-                  {collection.title}
-                </h2>
-              </div>
+              <h2
+                key={collection._id}
+                className={`border-[0.2px] shadow-md font-medium flex flex-initial dark:text-dark-text text-light-text mr-4 text-sm md:text-base px-4 py-1 md:px-4 rounded-md cursor-pointer whitespace-nowrap text-center justify-center items-center ${
+                  selectedCollection === collection._id
+                    ? "bg-light-secondary dark:bg-dark-secondary"
+                    : "hover:bg-light-secondary dark:hover:bg-dark-secondary"
+                } border-light-accent dark:border-dark-accent transition-all duration-300 cursor-pointer ease-out`}
+                onClick={() => setSelectedCollection(collection._id)}
+              >
+                {collection.title}
+              </h2>
             ))}
           </div>
           {/* Display the description of Selected Collection */}
@@ -121,7 +119,9 @@ function Journal({ photoCollections }) {
             alt={selectedPhoto.image.alt}
             className="shadow-lg max-w-full max-h-full z-50 mb-4 md:mb-6"
           />
-          <p className="text-dark-text italic text-center text-xs sm:text-sm md:text-base sm:w-4/6 w-full">{selectedPhoto?.image?.caption}</p>
+          <p className="text-dark-text italic text-center text-xs sm:text-sm md:text-base sm:w-4/6 w-full">
+            {selectedPhoto?.image?.caption}
+          </p>
         </div>
       )}
     </Layout>
