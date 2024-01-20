@@ -102,7 +102,7 @@ function Nav() {
             </div>
 
             <div className="flex flex-col justify-center items-center space-y-10 font-bold mt-16">
-              {["/", "/about", "/project", "/contact"].map((path, index) => (
+              {["/", "/about", "/project", "/journal", "/contact"].map((path, index) => (
                 <div
                   className="flex flex-col justify-center items-center"
                   key={index}

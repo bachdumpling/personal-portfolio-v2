@@ -42,7 +42,7 @@ function Journal({ photoCollections }) {
             {photoCollections?.map((collection) => (
               <h2
                 key={collection._id}
-                className={`border shadow-md font-medium flex flex-initial dark:text-dark-text text-light-text mr-4 text-sm md:text-base px-3.5 py-1.5 md:px-3.5 rounded-md cursor-pointer whitespace-nowrap text-center justify-center items-center ${
+                className={`border-[0.2px] shadow-md font-medium flex flex-initial dark:text-dark-text text-light-text mr-4 text-sm md:text-base px-4 py-1 md:px-4 rounded-md cursor-pointer whitespace-nowrap text-center justify-center items-center ${
                   selectedCollection === collection._id
                     ? "bg-light-secondary dark:bg-dark-secondary"
                     : "hover:bg-light-secondary dark:hover:bg-dark-secondary"
