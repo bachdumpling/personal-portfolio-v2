@@ -74,10 +74,10 @@ function About({ aboutPageData }) {
                     className="object-cover"
                   />
                   <div className="absolute scale-75 bottom-2 right-0">
-                    <SocialLinks />
+                    <SocialLinks color={"#FFFFFF"} />
                   </div>
                 </div>
-                <p className="font-marlin-soft-regular text-xs text-left pt-2 italic tracking-wide">
+                <p className="font-marlin-soft-regular text-xs text-center pt-2 italic tracking-wide">
                   Bach drinking iced tea and eating pho on the sidewalk. Hanoi,
                   Summer 2023. 🇻🇳 Konica C35, Kodak Potra 400 📸
                 </p>
@@ -89,7 +89,7 @@ function About({ aboutPageData }) {
                 <h2 className="font-marlin-soft-bold text-base md:text-lg text-light-text dark:text-dark-text">
                   Education
                 </h2>
-                <div className="pb-4 pt-0 space-y-3 flex flex-col text-sm md:text-base font-marlin-soft-regular text-light-text dark:text-dark-text">
+                <div className="pb-4 pt-0 space-y-3 flex flex-col text-sm font-marlin-soft-regular text-light-text dark:text-dark-text">
                   <div className="flex justify-start items-center mt-auto">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/Fordham_Rams_logo.svg/800px-Fordham_Rams_logo.svg.png"
@@ -138,7 +138,7 @@ function About({ aboutPageData }) {
 
               <div className="space-y-2">
                 <h2 className="font-marlin-soft-bold text-base md:text-lg text-light-text dark:text-dark-text">
-                  Cloud, Databases, and Tools
+                  Clouds, Databases, & Tools
                 </h2>
                 <div className="pb-4 pt-0 space-x-4 flex flex-row justify-start items-center">
                   <FaAws className="w-6 h-6 text-yellow-500 dark:text-yellow-400" />

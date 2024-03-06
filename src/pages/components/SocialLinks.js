@@ -12,9 +12,9 @@ async function fetchSocialLinks() {
   return data[0]; // Assuming there's only one document for social links
 }
 
-function SocialLinks() {
+function SocialLinks({ color }) {
   const { theme } = useTheme();
-  const fillColor = theme === "dark" ? "#FFFFFF" : "#000000";
+  const fillColor = color || (theme === "dark" ? "#FFFFFF" : "#000000");
 
   const [socialLinks, setSocialLinks] = useState(null);
 
