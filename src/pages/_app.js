@@ -11,7 +11,7 @@ const ThemedAppContainer = ({ children }) => {
 
   return (
     <div className={`${backgroundColor} min-h-screen font-inter relative`}>
-      <div className="absolute inset-0 bg-noise blur-[0.2px] md:[mask-image:linear-gradient(250deg,white,rgba(255,255,255,0))] [mask-image:linear-gradient(140deg,white,rgba(255,255,255,0))]"></div>
+      <div className="absolute inset-0 bg-noise blur-[0.2px] md:[mask-image:linear-gradient(250deg,white,rgba(255,255,255,0))] [mask-image:linear-gradient(270deg,white,rgba(190,190,255,0))]"></div>
       <div className="relative z-10">{children}</div>
     </div>
   );

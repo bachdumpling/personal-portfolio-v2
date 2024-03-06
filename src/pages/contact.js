@@ -43,7 +43,7 @@ function Contact() {
           <h1 className="pageTitle">Contact.</h1>
           <div className="pageContent">
             <div className="mb-4 md:mb-8 text-sm md:text-base textStyle">
-              <span>
+              <span className="font-marlin-soft-regular">
                 Get in touch or send me an email directly on{" "}
                 <span
                   onClick={() => {
@@ -57,40 +57,40 @@ function Contact() {
                       { duration: 2000 }
                     );
                   }}
-                  className="linkStyle font-semibold"
+                  className="linkStyle font-marlin-soft-bold cursor-pointer"
                 >
-                  lehoangbach7802@gmail.com{" "}
+                  bach@bachle.info{" "}
                 </span>
               </span>
             </div>
-            <div className="">
+            <div className="font-marlin-soft-regular">
               <form
                 ref={form}
                 onSubmit={(e) => sendEmail(e)}
                 className="grid grid-flow-row space-y-5 py-2 w-full md:w-1/2"
               >
                 <input
-                  className="rounded-md border-[1px] w-full h-14 indent-5"
+                  className="rounded-md border-[1px] w-full h-14 indent-5 outline-none"
                   placeholder="Name"
                   name="user_name"
                   required
                 ></input>
 
                 <input
-                  className="rounded-md border-[1px] w-full h-14 indent-5"
+                  className="rounded-md border-[1px] w-full h-14 indent-5 outline-none"
                   placeholder="Email"
                   name="user_email"
                   required
                 ></input>
 
                 <textarea
-                  className="rounded-md border-[1px] w-full h-32 textAreaContact indent-5 py-5"
+                  className="rounded-md border-[1px] w-full h-32 textAreaContact indent-5 py-5 outline-none"
                   placeholder="Message"
                   name="message"
                   required
                 ></textarea>
                 <button
-                  className="w-1/2 bg-light-accent dark:bg-dark-accent h-14 text-dark-text dark:text-light-text rounded-md text-sm md:text-base font-medium"
+                  className="w-1/2 bg-light-accent dark:bg-dark-accent h-14 text-dark-text dark:text-light-text rounded-md text-sm md:text-base font-marlin-soft-bold"
                   type="submit"
                   value="Send"
                 >
@@ -101,7 +101,7 @@ function Contact() {
 
             <Link href="/">
               <div className="my-4 md:my-8 flex space-x-3 cursor-pointer">
-                <p className="text-light-text dark:text-dark-text text-base hover:underline">
+                <p className="text-light-text dark:text-dark-text text-base hover:underline font-marlin-soft-regular">
                   Go back home
                 </p>
                 <div className="rotate-90 ">

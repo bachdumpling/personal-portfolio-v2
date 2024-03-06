@@ -38,23 +38,25 @@ function Hero({ projects }) {
           <div className="md:mt-14 md:mb-8 mt-10">
             <MainIntro />
           </div>
-          <p className="text-sm font-inconsolata md:text-lg md:py-2 md:text-left leading-relaxed tracking-wide">
+          <p className="font-marlin-soft-regular text-sm md:text-lg md:pb-2 md:text-left leading-relaxed tracking-wide">
             {/* I&apos;m a developer 📱, digital creator 📷, & curious optimist 🦦.
             Right now, I&apos;m probably exploring new hobbies, activities, and
             general knowledge; but I&apos;m always ready to collaborate with
             creatives and businesses. */}
-            I build things for the web. Sometimes I feel creative 👀. Most likely thrifting 🧥 or lifting 🏋🏼‍♀️ in my free time.
+            I build things for the web.
+            Sometimes I feel creative 👀. 
+            Most likely found at thrift stores, the gym, or on a plane 🧥 🏋🏼‍♀️ ✈️.
           </p>
-          <p className="text-sm md:text-lg leading-10 md:leading-10 font-inconsolata">
+          <p className="text-sm md:text-lg leading-10 md:leading-10 font-marlin-soft-regular tracking-wide">
             View my{" "}
             <Link href="/about">
-              <span className={`heroBtn`}>About</span>,
+              <span className={`heroBtn`}>About</span> ,
             </Link>{" "}
             <Link href="/project">
-              <span className={`heroBtn`}>Projects</span>, or
+              <span className={`heroBtn`}>Projects</span> , or
             </Link>{" "}
             <Link href="/journal">
-              <span className={`heroBtn`}>Journal</span>.
+              <span className={`heroBtn`}>Journal</span> .
             </Link>
           </p>
         </div>
@@ -76,8 +78,8 @@ function Hero({ projects }) {
         </div>
 
         <Link href="/project">
-          <div className="pt-4 md:pt-4 flex space-x-3 cursor-pointer text-light-text dark:text-dark-text">
-            <p className="text-base hover:underline">See more projects</p>
+          <div className="pt-4 md:pt-4 flex space-x-3 cursor-pointer font-marlin-soft-regular text-light-text dark:text-dark-text">
+            <p className="text-base hover:underline font-marlin-soft-regular">See more projects</p>
             <div className="rotate-90 ">
               <ArrowUpIcon className="w-5 rotate-90 animate-bounce" />
             </div>

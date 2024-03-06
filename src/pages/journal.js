@@ -30,7 +30,6 @@ export async function getStaticProps() {
 }
 
 function Journal({ photoCollections }) {
-  console.log(photoCollections);
   const [selectedCollection, setSelectedCollection] = useState(
     photoCollections[0]._id
   );
@@ -46,28 +45,30 @@ function Journal({ photoCollections }) {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.75 }}
         exit={{ opacity: 0 }}
-         className="pageLayout">
-        <h1 className="pageTitle">Journal.</h1>
+        className="md:max-w-3xl md:mx-auto lg:mx-auto pt-0 md:pt-10"
+      >
+        <h1 className="pageTitle mx-6 md:mx-auto lg:mx-auto">Journal.</h1>
         <div className="pageContent mb-6">
-          <div className="flex pb-4 no-scrollbar overflow-x-auto">
+          <div className="flex pb-4 no-scrollbar overflow-x-auto px-6 md:px-0 space-x-6 md:mx-auto lg:mx-auto">
             {/* Collection Buttons */}
             {photoCollections?.map((collection) => (
               <h2
                 key={collection._id}
-                className={`border-[0.2px] shadow-md font-medium flex flex-initial dark:text-dark-text text-light-text mr-4 text-sm md:text-base px-4 py-1 md:px-4 rounded-md cursor-pointer whitespace-nowrap text-center justify-center items-center ${
+                className={`border-[0.2px] shadow-md font-marlin-soft-bold flex flex-initial dark:text-dark-text text-light-text text-sm md:text-base px-6 py-3 md:px-8 rounded-md cursor-pointer whitespace-nowrap text-center justify-center items-center tracking-wide ${
                   selectedCollection === collection._id
                     ? "bg-light-secondary dark:bg-dark-secondary"
                     : "hover:bg-light-secondary dark:hover:bg-dark-secondary"
                 } border-light-accent dark:border-dark-accent transition-all duration-300 cursor-pointer ease-out`}
                 onClick={() => setSelectedCollection(collection._id)}
+                style={{ overflowX: "visible" }}
               >
                 {collection.title}
               </h2>
             ))}
           </div>
           {/* Display the description of Selected Collection */}
-          <div className="mb-4 md:mb-8">
-            <p className="mb-2 text-light-text dark:text-dark-text text-sm md:text-base text-justify">
+          <div className="mb-4 md:mb-8 font-marlin-soft-regular mx-6 md:mx-auto lg:mx-auto">
+            <p className="my-2 text-light-text dark:text-dark-text text-sm md:text-base tracking-wide">
               {
                 photoCollections.find(
                   (collection) => collection._id === selectedCollection
@@ -92,7 +93,7 @@ function Journal({ photoCollections }) {
           </div>
 
           {/* Display Photos of Selected Collection */}
-          <div className="columns-1 md:columns-2 space-y-4 md:space-y-6 md:gap-6">
+          <div className="columns-1 md:columns-2 space-y-4 md:space-y-6 md:gap-6 mx-6 md:mx-auto lg:mx-auto">
             {selectedCollection &&
               photoCollections
                 .find((collection) => collection._id === selectedCollection)

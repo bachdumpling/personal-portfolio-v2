@@ -1,5 +1,4 @@
 // schemas/aboutPage.js
-
 export default {
   name: 'aboutPage',
   title: 'About Page',

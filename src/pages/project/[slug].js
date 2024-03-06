@@ -49,7 +49,7 @@ const ProjectPage = () => {
       >
         <div className="h-full w-full dark:text-dark-text">
           <div className="pageTitle flex md:flex-row flex-col w-full">
-            <h1 className="w-full flex-1 text-start">{project.title}</h1>
+            <h1 className="min-w-fit flex-1 text-start">{project.title}</h1>
 
             <div className="flex w-full justify-start items-start space-x-2 mt-auto pt-2 md:py-0">
               {project?.website && (
