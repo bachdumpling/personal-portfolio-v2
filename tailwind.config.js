@@ -20,12 +20,16 @@ module.exports = {
       fontFamily: {
         inter: ["Inter", "sans-serif"],
         inconsolata: ["Inconsolata", "ui-sans-serif", "system-ui"],
+        "marlin-soft-extra-bold": ["MarlinSoftSQ ExtraBold", "sans-serif"],
+        "marlin-soft-bold": ["MarlinSoftSQ Bold", "sans-serif"],
+        "marlin-soft-regular": ["MarlinSoftSQ Regular", "sans-serif"],
+
       },
       colors: {
         // Light Mode Colors
         "light-primary": "#c2d3b9", // Light sage green
         "light-secondary": "#e7b585", // Burnt orange
-        "light-background": "#f5f5f5", // Off-white
+        "light-background": "#f4f1ec", // Off-white
         "light-accent": "#75754a", // Dark olive green
         "light-text": "#4a4a4a", // Dark gray
         "light-link": "#85654a", // Terracotta

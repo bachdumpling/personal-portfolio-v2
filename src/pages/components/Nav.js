@@ -32,7 +32,7 @@ function Nav() {
 
   return (
     <div
-      className={`flex justify-between py-12 md:pt-16 max-w-3xl mx-6 md:mx-auto lg:mx-auto ${
+      className={`flex bg-transparent justify-between py-12 md:pt-16 max-w-3xl mx-6 md:mx-auto lg:mx-auto ${
         theme === "dark"
           ? "bg-dark-background text-dark-text"
           : "bg-light-background text-light-text"
@@ -40,20 +40,20 @@ function Nav() {
     >
       {/* Left */}
       <Link href="/">
-        <p className="absolute text-xl font-bold uppercase tracking-wide cursor-pointer">
-          Bach Le.
+        <p className="absolute text-xl font-marlin-soft-extra-bold uppercase tracking-wider cursor-pointer">
+          Bach Le
         </p>
       </Link>
 
       {/* Right */}
-      <div className="grid-flow-col grid-rows-1 grid-cols-4 w-96 justify-items-center text-lg invisible md:visible inline-grid gap-x-10">
+      <div className="grid-flow-col grid-rows-1 grid-cols-4 w-96 justify-items-center text-md invisible md:visible inline-grid gap-x-10 font-marlin-soft-regular">
         {navItems.map((item) => (
           <div key={item.href} className="col-span-1">
             <Link href={item.href}>
               <p
                 className={`navBtn ${
                   params === item.href
-                    ? "font-bold text-light-accent dark:text-dark-accent"
+                    ? "font-marlin-soft-bold text-light-accent dark:text-dark-accent"
                     : ""
                 }`}
               >

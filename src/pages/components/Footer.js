@@ -10,7 +10,7 @@ function Footer() {
 
   return (
     <div
-      className={`${themeClasses} md:max-w-3xl mx-6 md:mx-auto lg:mx-auto pt-10 pb-20`}
+      className={`${themeClasses} bg-transparent md:max-w-3xl mx-6 md:mx-auto lg:mx-auto pt-10 pb-20`}
     >
       <div className="flex h-full flex-row justify-end items-center">
         <SocialLinks />

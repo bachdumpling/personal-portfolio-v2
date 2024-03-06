@@ -29,8 +29,6 @@ function SocialLinks() {
 
   if (!socialLinks) return null;
 
-  console.log(socialLinks);
-
   return (
     <div className="flex flex-row space-x-4">
       {socialLinks.github && (

@@ -54,7 +54,7 @@ function MainIntro() {
   return (
     <div className="flex flex-col">
       <div
-        className={`text-3xl md:text-5xl font-inter font-bold flex flex-row ${textColor}`}
+        className={`text-3xl md:text-5xl font-marlin-soft-extra-bold md:tracking-wide flex flex-row ${textColor}`}
       >
         <TextTransition inline={true} springConfig={presets.slow}>
           {greetings[index % greetings.length]}

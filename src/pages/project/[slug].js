@@ -48,31 +48,33 @@ const ProjectPage = () => {
         className="pageLayout"
       >
         <div className="h-full w-full dark:text-dark-text">
-          <div className="pageTitle flex">
-            <h1 className>{project.title}</h1>
-            {project?.website && (
-              <div className="flex justify-center mt-auto px-6 cursor-pointer">
-                <Link
-                  className="text-light-accent dark:text-dark-accent font-semibold text-xs md:text-base underline md:no-underline hover:underline"
-                  href={project?.website}
-                  target="_blank"
-                >
-                  Production
-                </Link>
-              </div>
-            )}
+          <div className="pageTitle flex md:flex-row flex-col w-full">
+            <h1 className="w-full flex-1 text-start">{project.title}</h1>
 
-            {project?.prototype && (
-              <div className="flex justify-center mt-auto cursor-pointer">
-                <Link
-                  className="text-light-accent dark:text-dark-accent font-semibold text-xs md:text-base underline md:no-underline hover:underline"
-                  href={project?.prototype}
-                  target="_blank"
-                >
-                  Prototype
-                </Link>
-              </div>
-            )}
+            <div className="flex w-full justify-start items-start space-x-2 mt-auto pt-2 md:py-0">
+              {project?.website && (
+                <div className="flex justify-center mt-auto md:px-6 cursor-pointer">
+                  <Link
+                    className="text-light-accent dark:text-dark-accent font-semibold text-xs md:text-base underline md:no-underline hover:underline"
+                    href={project?.website}
+                    target="_blank"
+                  >
+                    Production
+                  </Link>
+                </div>
+              )}
+              {project?.prototype && (
+                <div className="flex justify-center mt-auto cursor-pointer">
+                  <Link
+                    className="text-light-accent dark:text-dark-accent font-semibold text-xs md:text-base underline md:no-underline hover:underline"
+                    href={project?.prototype}
+                    target="_blank"
+                  >
+                    Prototype
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
 
           <div className="flex justify-center items-center my-2 md:my-4 shadow-lg w-full h-full">
@@ -106,7 +108,7 @@ const ProjectPage = () => {
                   About
                 </p>
               </div>
-              <p className="text-light-text dark:text-dark-text text-justify text-sm md:text-base">
+              <p className="text-light-text dark:text-dark-text text-sm md:text-base">
                 {project?.longDescription.split("\n").map((line, index) => (
                   // <p key={index}>{line}</p>
                   <span key={index}>

@@ -22,39 +22,28 @@ function Hero({ projects }) {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.75 }}
       exit={{ opacity: 0 }}
-      className={`w-full h-full ${
-        theme === "dark"
-          ? "bg-dark-background text-dark-text"
-          : "bg-background text-text"
-      }`}
+      className={`w-full h-full`}
     >
-      {/* <div
-      className={
-        theme === "dark"
-          ? "bg-dark-background text-white"
-          : "bg-white text-black"
-      }
-    > */}
       <div className="pageLayout">
         <div className="flex">
           <div className="bg-light-secondary dark:bg-dark-secondary relative w-32 h-32 grid place-items-center rounded-full drop-shadow-md z-10">
-            <Image className="w-32 h-32" src={avatar} alt="avatar" />
+            <Image className="w-[7rem] translate-y-1" src={avatar} alt="avatar" />
             <div className="absolute w-10 h-10 right-2 grid place-items-center rounded-full bg-dark-text drop-shadow-md bottom-0 translate-y-2">
               <p className="text-3xl">🤝</p>
             </div>
           </div>
         </div>
 
-        <div className="space-y-2 md:space-y-2">
+        <div className="space-y-2 md:space-y-2 text-light-text dark:text-dark-text">
           <div className="md:mt-14 md:mb-8 mt-10">
             <MainIntro />
           </div>
-          <p className="text-sm font-inconsolata md:text-lg py-2 text-justify md:text-left leading-relaxed">
+          <p className="text-sm font-inconsolata md:text-lg md:py-2 md:text-left leading-relaxed tracking-wide">
             {/* I&apos;m a developer 📱, digital creator 📷, & curious optimist 🦦.
             Right now, I&apos;m probably exploring new hobbies, activities, and
             general knowledge; but I&apos;m always ready to collaborate with
             creatives and businesses. */}
-            I build things for the web. Sometimes I feel creative 👀
+            I build things for the web. Sometimes I feel creative 👀. Most likely thrifting 🧥 or lifting 🏋🏼‍♀️ in my free time.
           </p>
           <p className="text-sm md:text-lg leading-10 md:leading-10 font-inconsolata">
             View my{" "}
@@ -71,9 +60,10 @@ function Hero({ projects }) {
         </div>
 
         <div className="mt-8 md:mt-10">
-          <h1 className="text-xl md:text-3xl font-bold mb-6 md:mb-8 text-light-text dark:text-dark-text">
+          <h1 className="text-xl md:text-3xl font-marlin-soft-bold mb-6 md:mb-8 text-light-text dark:text-dark-text">
             Recent Projects
           </h1>
+
           <div
             className={`grid md:grid-cols-2 grid-cols-1 grid-flow-row gap-6 my-2`}
           >
@@ -86,7 +76,7 @@ function Hero({ projects }) {
         </div>
 
         <Link href="/project">
-          <div className="pt-4 md:pt-4 flex space-x-3 cursor-pointer">
+          <div className="pt-4 md:pt-4 flex space-x-3 cursor-pointer text-light-text dark:text-dark-text">
             <p className="text-base hover:underline">See more projects</p>
             <div className="rotate-90 ">
               <ArrowUpIcon className="w-5 rotate-90 animate-bounce" />

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Layout from "./components/Layout";
 import { client } from "@/lib/sanity.client";
 import urlFor from "@/lib/urlFor";
+import { motion as m } from "framer-motion";
 
 export async function getStaticProps() {
   const photoCollections = await client.fetch(
@@ -40,7 +41,12 @@ function Journal({ photoCollections }) {
 
   return (
     <Layout>
-      <div className="pageLayout">
+      <m.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.75 }}
+        exit={{ opacity: 0 }}
+         className="pageLayout">
         <h1 className="pageTitle">Journal.</h1>
         <div className="pageContent mb-6">
           <div className="flex pb-4 no-scrollbar overflow-x-auto">
@@ -106,7 +112,7 @@ function Journal({ photoCollections }) {
                 ))}
           </div>
         </div>
-      </div>
+      </m.div>
 
       {/* Lightbox for Fullscreen Photo */}
       {selectedPhoto && (
