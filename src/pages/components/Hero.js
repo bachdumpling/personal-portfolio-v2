@@ -45,7 +45,7 @@ function Hero({ projects }) {
             creatives and businesses. */}
             I build things for the web.
             Sometimes I feel creative 👀. 
-            Most likely found at thrift stores, the gym, or on a plane 🧥 🏋🏼‍♀️ ✈️.
+            Most likely found at thrift stores, the gym, or on a plane &#129509; &#127947;&#127995;&zwj;&#9794;&#65039; ✈️ .
           </p>
           <p className="text-sm md:text-lg leading-10 md:leading-10 font-marlin-soft-regular tracking-wide">
             View my{" "}
