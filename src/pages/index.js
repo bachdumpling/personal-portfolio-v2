@@ -8,7 +8,7 @@ import Loading from "./components/Loading";
 
 export async function getStaticProps() {
   const projects = await client.fetch(
-    `*[_type == "project"] | order(_createdAt desc)[0...4]`
+    `*[_type == "project" && isFeatured == true] | order(_createdAt desc)[0...4]`
   );
   return {
     props: {

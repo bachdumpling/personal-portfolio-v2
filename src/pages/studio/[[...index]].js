@@ -7,7 +7,7 @@ import Layout from "../components/Layout";
 
 export default function StudioPage() {
   return (
-    <Layout hideNavFooter={true}>
+    <Layout hideNavFooter={false}>
       <Head>
         <NextStudioHead />
       </Head>

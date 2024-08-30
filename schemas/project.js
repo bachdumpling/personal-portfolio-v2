@@ -22,6 +22,12 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "isFeatured",
+      title: "Featured Project",
+      type: "boolean",
+      description: "Mark this project as a featured project.",
+    }),
+    defineField({
       name: "shortDescription",
       title: "Short Description",
       type: "text",
